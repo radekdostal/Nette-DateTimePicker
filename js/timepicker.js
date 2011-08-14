@@ -285,7 +285,7 @@ Timepicker.prototype = {
         html += '<div class="ui-datepicker-header ui-widget-header ui-helper-clearfix ui-corner-all">';
         html += '<div class="ui-datepicker-title" style="margin:0">';
         html += '<span class="fragHours">08</span><span class="delim">:</span><span class="fragMinutes">45</span> <span class="fragAmpm"></span></div></div><table>';
-        html += '<tr><th>hod.</th><th>min.</th></tr>';
+        html += '<tr><th>hrs.</th><th>min.</th></tr>';
         html += '<tr><td align="center"><div id="hourSlider" class="slider"></div></td><td align="center"><div id="minuteSlider" class="slider"></div></td></tr>';
         html += '</table>';
 

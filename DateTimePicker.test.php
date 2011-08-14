@@ -1,28 +1,39 @@
 <?php
  /**
-  * Nette\Extras DateTimePicker with jQuery UI 1.8.4 example
+  * Nette\Extras\DateTimePicker with jQuery 1.6.2 and jQuery UI 1.8.6 example
+  *
+  * @package   Nette\Extras\DateTimePicker
+  * @example   http://addons.nette.org/datetimepicker
+  * @version   $Id: DateTimePicker.test.php,v 1.1.0 2011/08/12 11:33:06 dostal Exp $
+  * @author    Ing. Radek Dostál <radek.dostal@gmail.com>
+  * @copyright Copyright (c) 2010 - 2011 Radek Dostál
+  * @license   GNU Lesser General Public License
+  * @link      http://www.radekdostal.cz
   */
+
+ use Nette\Diagnostics\Debugger,
+     Nette\Forms,
+     Nette\Extras;
 
  require_once('lib/Nette/loader.php');
  require_once('lib/Nette/Extras/DateTimePicker.php');
 
- Debug::enable();
+ Debugger::$strictMode = TRUE;
+ Debugger::enable();
 
- // Budoucí metoda Form::addDateTimePicker()
- function Form_addDateTimePicker(Form $_this, $name, $label, $cols = NULL, $maxLength = NULL)
+ function Form_addDateTimePicker(Forms\Form $_this, $name, $label, $cols = NULL, $maxLength = NULL)
  {
-   return $_this[$name] = new DateTimePicker($label, $cols, $maxLength);
+   return $_this[$name] = new Extras\DateTimePicker($label, $cols, $maxLength);
  }
 
- Form::extensionMethod('Form::addDateTimePicker', 'Form_addDateTimePicker');  // v PHP 5.2
- //Form::extensionMethod('addDateTimePicker', 'Form_addDateTimePicker');  // v PHP 5.3
+ Forms\Form::extensionMethod('addDateTimePicker', 'Form_addDateTimePicker');
 
- $form = new Form();
+ $form = new Forms\Form();
 
- $form->addDateTimePicker('datum_cas', 'Kdy a v kolik to bude?', 16, 16)
-      ->addRule(Form::FILLED, 'Zadejte prosím datum a čas.');
+ $form->addDateTimePicker('date_time', 'Date and time:', 16, 16)
+      ->addRule($form::FILLED, 'Select date and time.');
 
- $form->addSubmit('submitDatetime', 'Odeslat');
+ $form->addSubmit('send', 'Send');
 
  if ($form->isSubmitted())
  {
@@ -30,29 +41,27 @@
    {
      echo '<h2>Form was submitted and successfully validated</h2>';
 
-     $values = $form->getValues();
-
-     echo '<pre>';
-     print_r($values);
-     echo '</pre>';
+     Debugger::dump($form->values);
 
      exit;
    }
  }
  //else
-   //$form->setDefaults(array('datum_cas' => '2010-08-26 06:32'));
+   //$form->setDefaults(array('date_time' => date('Y-m-d H:i')));
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="cs" lang="cs">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <meta http-equiv="Content-Language" content="cs" />
-  <title>Nette\Extras DateTimePicker with jQuery UI 1.8.4 example</title>
-  <link rel="stylesheet" href="http://jquery-ui.googlecode.com/svn/tags/1.8.4/themes/blitzer/jquery.ui.all.css" type="text/css" />
-  <script type="text/javascript" src="http://code.jquery.com/jquery-1.4.2.min.js"></script>
-  <script type="text/javascript" src="http://jquery-ui.googlecode.com/svn/tags/1.8.4/ui/jquery-ui.js"></script>
-  <script type="text/javascript" src="http://jquery-ui.googlecode.com/svn/tags/1.8.4/ui/minified/i18n/jquery.ui.datepicker-cs.min.js"></script>
-  <script type="text/javascript" src="js/timepicker-cs.js"></script>
+  <meta http-equiv="Content-Language" content="en" />
+  <meta name="author" content="Radek Dostál" />
+  <title>Nette\Extras\DateTimePicker with jQuery 1.6.2 and jQuery UI 1.8.6 example</title>
+  <link rel="stylesheet" type="text/css" href="css/jquery-ui.css" />
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="js/jquery.ui.datepicker-en-GB.min.js"></script>
+  <script type="text/javascript" src="js/timepicker.js"></script>
+  <script type="text/javascript" src="js/netteForms.js"></script>
   <script type="text/javascript">
   <!-- <![CDATA[
     $(document).ready(function()
@@ -62,11 +71,9 @@
         duration: '',
         changeMonth: true,
         changeYear: true,
-        yearRange: '2007:2020',
+        yearRange: '2010:2020',
         showTime: true,
-        time24h: true,
-        currentText: 'Dnes',
-        closeText: 'OK'
+        time24h: true
       });
     });
   //]]> -->
@@ -99,7 +106,7 @@
   </style>
 </head>
 <body>
-  <h1>Nette\Extras DateTimePicker with jQuery UI 1.8.4 example</h1>
+  <h1>Nette\Extras\DateTimePicker with jQuery 1.6.2 and jQuery UI 1.8.6 example</h1>
 <?php
  echo $form;
 ?>
