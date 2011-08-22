@@ -4,7 +4,7 @@
   *
   * @package   Nette\Extras\DateTimePicker
   * @example   http://addons.nette.org/datetimepicker
-  * @version   $Id: DateTimePicker.php,v 1.1.0 2011/08/12 11:33:06 dostal Exp $
+  * @version   $Id: DateTimePicker.php,v 1.2.0 2011/08/22 09:36:28 dostal Exp $
   * @author    Ing. Radek Dostál <radek.dostal@gmail.com>
   * @copyright Copyright (c) 2010 - 2011 Radek Dostál
   * @license   GNU Lesser General Public License
@@ -80,6 +80,7 @@
      $control = parent::getControl();
 
      $control->class = 'datetimepicker';
+     $control->readonly = TRUE;
 
      return $control;
    }

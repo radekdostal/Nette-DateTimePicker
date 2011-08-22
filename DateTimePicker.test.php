@@ -1,10 +1,10 @@
 <?php
  /**
-  * Nette\Extras\DateTimePicker with jQuery 1.6.2 and jQuery UI 1.8.6 example
+  * Nette\Extras\DateTimePicker with jQuery 1.6.2 and jQuery UI 1.8.16 example
   *
   * @package   Nette\Extras\DateTimePicker
   * @example   http://addons.nette.org/datetimepicker
-  * @version   $Id: DateTimePicker.test.php,v 1.1.0 2011/08/12 11:33:06 dostal Exp $
+  * @version   $Id: DateTimePicker.test.php,v 1.2.0 2011/08/22 09:33:10 dostal Exp $
   * @author    Ing. Radek Dostál <radek.dostal@gmail.com>
   * @copyright Copyright (c) 2010 - 2011 Radek Dostál
   * @license   GNU Lesser General Public License
@@ -55,7 +55,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="Content-Language" content="en" />
   <meta name="author" content="Radek Dostál" />
-  <title>Nette\Extras\DateTimePicker with jQuery 1.6.2 and jQuery UI 1.8.6 example</title>
+  <title>Nette\Extras\DateTimePicker with jQuery 1.6.2 and jQuery UI 1.8.16 example</title>
   <link rel="stylesheet" type="text/css" href="css/jquery-ui.css" />
   <script type="text/javascript" src="js/jquery.min.js"></script>
   <script type="text/javascript" src="js/jquery-ui.min.js"></script>
@@ -66,14 +66,13 @@
   <!-- <![CDATA[
     $(document).ready(function()
     {
-      $('input.datetimepicker').datepicker(
+      $('input.datetimepicker').datetimepicker(
       {
         duration: '',
         changeMonth: true,
         changeYear: true,
         yearRange: '2010:2020',
-        showTime: true,
-        time24h: true
+        stepMinute: 5
       });
     });
   //]]> -->
@@ -106,7 +105,7 @@
   </style>
 </head>
 <body>
-  <h1>Nette\Extras\DateTimePicker with jQuery 1.6.2 and jQuery UI 1.8.6 example</h1>
+  <h1>Nette\Extras\DateTimePicker with jQuery 1.6.2 and jQuery UI 1.8.16 example</h1>
 <?php
  echo $form;
 ?>
