@@ -4,7 +4,7 @@
 DateTimePicker Control for Nette Framework
 
 - Author: Radek Dostál <[radek.dostal@gmail.com](radek.dostal@gmail.com)>
-- Copyright: Copyright (c) 2010 - 2013 [Radek Dostál](http://www.radekdostal.cz)
+- Copyright: Copyright (c) 2010 - 2014 [Radek Dostál](http://www.radekdostal.cz)
 - Licence: [GNU Lesser General Public License](http://www.gnu.org/licenses/)
 - Github: [http://github.com/radekdostal/Nette-DateTimePicker](http://github.com/radekdostal/Nette-DateTimePicker)
 

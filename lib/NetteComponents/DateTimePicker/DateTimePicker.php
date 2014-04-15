@@ -3,10 +3,10 @@
  * DateTimePicker Input Control
  *
  * @package   RadekDostal\NetteComponents\DateTimePicker
- * @example   http://addons.nette.org/datetimepicker
- * @version   $Id: DateTimePicker.php,v 1.2.1 2013/03/20 10:59:00 dostal Exp $
+ * @example   http://addons.nette.org/radekdostal/nette-datetimepicker
+ * @version   $Id: DateTimePicker.php,v 1.2.1 2014/04/15 08:15:00 dostal Exp $
  * @author    Ing. Radek Dostál <radek.dostal@gmail.com>
- * @copyright Copyright (c) 2010 - 2013 Radek Dostál
+ * @copyright Copyright (c) 2010 - 2014 Radek Dostál
  * @license   GNU Lesser General Public License
  * @link      http://www.radekdostal.cz
  */

@@ -3,8 +3,8 @@
  * RadekDostal\NetteComponents\DateTimePicker with jQuery and jQuery UI example
  *
  * @package   RadekDostal\NetteComponents\DateTimePicker
- * @example   http://addons.nette.org/datetimepicker
- * @version   $Id: DateTimePicker.test.php,v 1.2.1 2014/04/15 07:11:00 dostal Exp $
+ * @example   http://addons.nette.org/radekdostal/nette-datetimepicker
+ * @version   $Id: DateTimePicker.test.php,v 1.2.1 2014/04/15 08:14:00 dostal Exp $
  * @author    Ing. Radek Dostál <radek.dostal@gmail.com>
  * @copyright Copyright (c) 2010 - 2014 Radek Dostál
  * @license   GNU Lesser General Public License
