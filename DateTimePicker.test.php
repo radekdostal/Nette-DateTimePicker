@@ -4,9 +4,9 @@
  *
  * @package   RadekDostal\NetteComponents\DateTimePicker
  * @example   http://addons.nette.org/datetimepicker
- * @version   $Id: DateTimePicker.test.php,v 1.2.1 2013/03/20 11:42:00 dostal Exp $
+ * @version   $Id: DateTimePicker.test.php,v 1.2.1 2014/04/15 07:11:00 dostal Exp $
  * @author    Ing. Radek Dostál <radek.dostal@gmail.com>
- * @copyright Copyright (c) 2010 - 2013 Radek Dostál
+ * @copyright Copyright (c) 2010 - 2014 Radek Dostál
  * @license   GNU Lesser General Public License
  * @link      http://www.radekdostal.cz
  */
@@ -32,19 +32,16 @@ $form->addDateTimePicker('datetime', 'Date and time:', 16, 16)
 
 $form->addSubmit('submit', 'Send');
 
-if ($form->isSubmitted())
+if ($form->isSuccess())
 {
-  if ($form->isValid())
-  {
-    echo '<h2>Form was submitted and successfully validated</h2>';
+  echo '<h2>Form was submitted and successfully validated</h2>';
 
-    Debugger::dump($form->values);
-    exit;
-  }
+  Debugger::dump($form->values);
+  exit;
 }
 /*else
   $form->setDefaults(array(
-    'datetime' => date('Y-d-m H:i')
+    'datetime' => date('Y-m-d H:i')
   ));*/
 ?>
 <!DOCTYPE html>
