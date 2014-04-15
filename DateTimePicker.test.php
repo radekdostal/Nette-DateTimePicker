@@ -14,7 +14,7 @@
 use Nette\Diagnostics\Debugger;
 use Nette\Forms\Form;
 
-require_once('lib/Nette/nette.min.php');
+require_once('vendor/autoload.php');
 require_once('lib/NetteComponents/DateTimePicker/DateTimePicker.php');
 
 Debugger::$strictMode = TRUE;
