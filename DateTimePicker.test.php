@@ -4,7 +4,7 @@
  *
  * @package   RadekDostal\NetteComponents\DateTimePicker
  * @example   http://addons.nette.org/radekdostal/nette-datetimepicker
- * @version   $Id: DateTimePicker.test.php,v 1.2.1 2014/04/15 08:14:00 dostal Exp $
+ * @version   $Id: DateTimePicker.test.php,v 1.2.1 2014/04/28 07:12:00 dostal Exp $
  * @author    Ing. Radek Dostál <radek.dostal@gmail.com>
  * @copyright Copyright (c) 2010 - 2014 Radek Dostál
  * @license   GNU Lesser General Public License
@@ -15,7 +15,6 @@ use Nette\Diagnostics\Debugger;
 use Nette\Forms\Form;
 
 require_once('vendor/autoload.php');
-require_once('lib/NetteComponents/DateTimePicker/DateTimePicker.php');
 
 Debugger::$strictMode = TRUE;
 Debugger::enable();
