@@ -1,7 +1,6 @@
-﻿DateTimePicker
-==============
+﻿# DateTimePicker for Nette Framework
 
-DateTimePicker Control for Nette Framework
+DateTimePicker Input Control for Nette Framework
 
 - Author: Radek Dostál <[radek.dostal@gmail.com](radek.dostal@gmail.com)>
 - Copyright: Copyright (c) 2010 - 2014 [Radek Dostál](http://www.radekdostal.cz)
@@ -10,20 +9,17 @@ DateTimePicker Control for Nette Framework
 
 This add-on creates input box to select date and time.
 
-Requirements
-------------
+## Requirements
 
-- **PHP** 5.3
-- **Nette Framework** 2.0 or later
-- **jQuery** 1.9.1
-- **jQuery Timepicker Addon** 1.2
-- **jQuery UI** 1.10.2
+- **[PHP](http://php.net)** 5.3 or later
+- **[Nette Framework](http://nette.org)** 2.0 or later
+- **[jQuery](http://jquery.com)** 1.9.1 or later
+- **[jQuery UI](http://jqueryui.com)** 1.10.2 or later
+- **[jQuery Timepicker Addon](http://trentrichardson.com/examples/timepicker)** 1.2 or later
 
-GNU Lesser General Public License
----------------------------------
+## GNU Lesser General Public License
 
 LGPL licenses are very very long, so instead of including them here we offer you URLs with full text:
 
-- [LGPL version 2.0](http://www.gnu.org/licenses/old-licenses/lgpl-2.0.html)
 - [LGPL version 2.1](http://www.gnu.org/licenses/lgpl-2.1.html)
 - [LGPL version 3](http://www.gnu.org/licenses/lgpl-3.0.html)

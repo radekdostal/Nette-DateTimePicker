@@ -4,7 +4,6 @@
  *
  * @package   RadekDostal\NetteComponents\DateTimePicker
  * @example   http://addons.nette.org/radekdostal/nette-datetimepicker
- * @version   $Id: DateTimePicker.test.php,v 1.2.1 2014/04/28 07:12:00 dostal Exp $
  * @author    Ing. Radek Dostál <radek.dostal@gmail.com>
  * @copyright Copyright (c) 2010 - 2014 Radek Dostál
  * @license   GNU Lesser General Public License
@@ -14,7 +13,7 @@
 use Nette\Diagnostics\Debugger;
 use Nette\Forms\Form;
 
-require_once('vendor/autoload.php');
+require '../vendor/autoload.php';
 
 Debugger::$strictMode = TRUE;
 Debugger::enable();
@@ -35,13 +34,15 @@ if ($form->isSuccess())
 {
   echo '<h2>Form was submitted and successfully validated</h2>';
 
-  Debugger::dump($form->values);
+  Debugger::dump($form->getValues());
   exit;
 }
 /*else
+{
   $form->setDefaults(array(
     'datetime' => date('Y-m-d H:i')
-  ));*/
+  ));
+}*/
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -49,24 +50,24 @@ if ($form->isSuccess())
   <meta charset="UTF-8">
   <meta name="author" content="Radek Dostál">
   <title>RadekDostal\NetteComponents\DateTimePicker with jQuery and jQuery UI example</title>
-  <link rel="stylesheet" type="text/css" href="js/jquery-ui/jquery-ui.min.css">
-  <link rel="stylesheet" type="text/css" href="js/jquery-ui/datetimepicker/timepicker.css">
-  <script type="text/javascript" src="js/jquery/jquery.min.js"></script>
-  <script type="text/javascript" src="js/jquery-ui/jquery-ui.min.js"></script>
-  <script type="text/javascript" src="js/jquery-ui/datetimepicker/timepicker.js"></script>
-  <script type="text/javascript" src="js/nette/netteForms.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-ui-timepicker-addon/1.4.5/jquery-ui-timepicker-addon.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script type="text/javascript" src="https://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ui-timepicker-addon/1.4.5/jquery-ui-timepicker-addon.min.js"></script>
   <script type="text/javascript">
     <!-- <![CDATA[
     $(document).ready(function()
     {
       $('input.datetimepicker').datetimepicker(
-        {
-          duration: '',
-          changeMonth: true,
-          changeYear: true,
-          yearRange: '2010:2020',
-          stepMinute: 5
-        });
+      {
+        duration: '',
+        changeMonth: true,
+        changeYear: true,
+        dateFormat: 'dd.mm.yy',
+        yearRange: '2010:2020',
+        stepMinute: 5
+      });
     });
     //]]> -->
   </script>
