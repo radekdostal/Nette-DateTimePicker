@@ -26,7 +26,7 @@ Form::extensionMethod('addDateTimePicker', function(Form $_this, $name, $label, 
 $form = new Form();
 
 $form->addDateTimePicker('datetime', 'Date and time:', 16, 16)
-  ->addRule($form::FILLED, 'Please select date and time.');
+  ->setRequired();
 
 $form->addSubmit('submit', 'Send');
 
