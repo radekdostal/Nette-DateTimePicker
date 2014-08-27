@@ -75,7 +75,7 @@ class DateTimePicker extends TextInput
   {
     $control = parent::getControl();
 
-    $control->class = 'datetimepicker';
+    $control->class = 'datetimepicker form-control';
     $control->readonly = TRUE;
 
     return $control;
