@@ -17,7 +17,6 @@ use Nette\Forms\Controls\TextInput;
 /**
  * DatePicker Input Control
  *
- * @package RadekDostal\NetteComponents
  * @author Radek Dostál
  */
 class DatePicker extends TextInput
