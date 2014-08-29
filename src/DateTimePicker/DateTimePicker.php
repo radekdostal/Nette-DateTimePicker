@@ -10,7 +10,7 @@
  * @link      http://www.radekdostal.cz
  */
 
-namespace RadekDostal\NetteComponents;
+namespace RadekDostal\NetteComponents\DateTimePicker;
 
 use Nette\Forms\Controls\TextInput;
 

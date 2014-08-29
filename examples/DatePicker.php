@@ -1,6 +1,6 @@
 <?php
 /**
- * RadekDostal\NetteComponents\DatePicker with jQuery and jQuery UI example
+ * RadekDostal\NetteComponents\DateTimePicker\DatePicker example
  *
  * @package   RadekDostal\NetteComponents\DateTimePicker
  * @example   http://addons.nette.org/radekdostal/nette-datetimepicker
@@ -20,7 +20,7 @@ Debugger::enable();
 
 Form::extensionMethod('addDatePicker', function(Form $_this, $name, $label, $cols = NULL, $maxLength = NULL)
 {
-  return $_this[$name] = new RadekDostal\NetteComponents\DatePicker($label, $cols, $maxLength);
+  return $_this[$name] = new RadekDostal\NetteComponents\DateTimePicker\DatePicker($label, $cols, $maxLength);
 });
 
 $form = new Form();
@@ -49,7 +49,7 @@ if ($form->isSuccess())
 <head>
   <meta charset="UTF-8">
   <meta name="author" content="Radek Dostál">
-  <title>RadekDostal\NetteComponents\DatePicker with jQuery and jQuery UI example</title>
+  <title>RadekDostal\NetteComponents\DateTimePicker\DatePicker example</title>
   <link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
   <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
   <script type="text/javascript" src="https://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
@@ -86,7 +86,7 @@ if ($form->isSuccess())
   </style>
 </head>
 <body>
-  <h1>RadekDostal\NetteComponents\DatePicker with jQuery and jQuery UI example</h1>
+  <h1>RadekDostal\NetteComponents\DateTimePicker\DatePicker example</h1>
 <?php
   echo $form;
 ?>
