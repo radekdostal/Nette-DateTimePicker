@@ -1,6 +1,6 @@
 ﻿# DateTimePicker for Nette Framework
 
-DatePicker and DateTimePicker Input Control for Nette Framework
+DatePicker and DateTimePicker input controls for Nette Framework
 
 - Author: Radek Dostál &lt;radek.dostal@gmail.com&gt;
 - Copyright: Copyright (c) 2010 - 2014 [Radek Dostál](http://www.radekdostal.cz)
@@ -14,8 +14,10 @@ This add-on creates input box to select date or date and time.
 - **[PHP](http://php.net)** 5.3 or later
 - **[Nette Framework](http://nette.org)** 2.0 or later
 - **[jQuery](http://jquery.com)** 1.9.1 or later
-- **[jQuery UI](http://jqueryui.com)** 1.10.2 or later
-- **[jQuery Timepicker Addon](http://trentrichardson.com/examples/timepicker)** 1.2 or later
+- **[jQuery UI](http://jqueryui.com)** 1.10.2 or later (DatePicker and DateTimePicker only)
+- **[jQuery Timepicker Addon](http://trentrichardson.com/examples/timepicker)** 1.2 or later (DateTimePicker only)
+- **[Moment.js](http://momentjs.com)** 2.8 or later (TbDatePicker only)
+- **[Bootstrap datetimepicker](http://eonasdan.github.io/bootstrap-datetimepicker)** 3.1.2 or later (TbDatePicker only)
 
 ## GNU Lesser General Public License
 
