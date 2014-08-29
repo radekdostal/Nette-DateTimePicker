@@ -16,8 +16,8 @@ This add-on creates input box to select date or date and time.
 - **[jQuery](http://jquery.com)** 1.9.1 or later
 - **[jQuery UI](http://jqueryui.com)** 1.10.2 or later (DatePicker and DateTimePicker only)
 - **[jQuery Timepicker Addon](http://trentrichardson.com/examples/timepicker)** 1.2 or later (DateTimePicker only)
-- **[Moment.js](http://momentjs.com)** 2.8 or later (TbDatePicker only)
-- **[Bootstrap datetimepicker](http://eonasdan.github.io/bootstrap-datetimepicker)** 3.1.2 or later (TbDatePicker only)
+- **[Moment.js](http://momentjs.com)** 2.8 or later (TbDatePicker and TbDateTimePicker only)
+- **[Bootstrap datetimepicker](http://eonasdan.github.io/bootstrap-datetimepicker)** 3.1.2 or later (TbDatePicker and TbDateTimePicker only)
 
 ## GNU Lesser General Public License
 
