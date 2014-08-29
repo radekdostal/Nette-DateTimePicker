@@ -43,8 +43,8 @@ class DatePicker extends TextInput
   {
     if (strlen($this->value) > 0)
     {
-      $tmp = preg_replace('~([[:space:]])~', '', $this->value);
-      $date = explode('.', $tmp);
+      $date = preg_replace('~([[:space:]])~', '', $this->value);
+      $date = explode('.', $date);
 
       // Database date format: Y-m-d
       return @$date[2].'-'.@$date[1].'-'.@$date[0];

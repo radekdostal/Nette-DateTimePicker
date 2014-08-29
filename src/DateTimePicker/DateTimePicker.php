@@ -43,11 +43,11 @@ class DateTimePicker extends TextInput
   {
     if (strlen($this->value) > 0)
     {
-      $tmp = explode(' ', $this->value);
-      $date = explode('.', $tmp[0]);
+      $datetime = explode(' ', $this->value);
+      $date = explode('.', $datetime[0]);
 
       // Database datetime format: Y-m-d H:i:s
-      return @$date[2].'-'.@$date[1].'-'.@$date[0].' '.@$tmp[1];
+      return @$date[2].'-'.@$date[1].'-'.@$date[0].' '.@$datetime[1];
     }
 
     return $this->value;
