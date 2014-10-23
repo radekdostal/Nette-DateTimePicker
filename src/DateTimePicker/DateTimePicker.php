@@ -13,6 +13,7 @@
 namespace RadekDostal\NetteComponents\DateTimePicker;
 
 use Nette\Forms\Controls\TextInput;
+use Nette\Utils\DateTime;
 
 /**
  * DateTimePicker Input Control
@@ -21,6 +22,9 @@ use Nette\Forms\Controls\TextInput;
  */
 class DateTimePicker extends TextInput
 {
+
+  private $format = 'd.m.Y H:i';
+  
   /**
    * Initialization
    *
@@ -33,6 +37,12 @@ class DateTimePicker extends TextInput
     parent::__construct($label, $cols, $maxLength);
   }
 
+  public function setFormat($format)
+  {
+    $this->format = $format;
+    return $this;
+  }
+  
   /**
    * Returns date and time
    *
@@ -42,11 +52,7 @@ class DateTimePicker extends TextInput
   {
     if (strlen($this->value) > 0)
     {
-      $datetime = explode(' ', $this->value);
-      $date = explode('.', $datetime[0]);
-
-      // Database datetime format: Y-m-d H:i:s
-      return @$date[2].'-'.@$date[1].'-'.@$date[0].' '.@$datetime[1];
+      return DateTime::createFromFormat($this->format, $this->value);
     }
 
     return $this->value;
@@ -60,8 +66,11 @@ class DateTimePicker extends TextInput
    */
   public function setValue($value)
   {
-    $value = preg_replace('~([0-9]{4})-([0-9]{2})-([0-9]{2})~', '$3.$2.$1', $value);
-
+    if ($value instanceof DateTime)
+    {
+      $value = $value->format($this->format);
+    }
+    
     parent::setValue($value);
   }
 
