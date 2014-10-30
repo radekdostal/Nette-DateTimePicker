@@ -10,8 +10,8 @@
  * @link      http://www.radekdostal.cz
  */
 
-use Nette\Diagnostics\Debugger;
 use Nette\Forms\Form;
+use Tracy\Debugger;
 
 require '../vendor/autoload.php';
 
@@ -26,6 +26,7 @@ Form::extensionMethod('addDateTimePicker', function(Form $_this, $name, $label, 
 $form = new Form();
 
 $form->addDateTimePicker('datetime', 'Date and time:', 16, 16)
+  //->setFormat('m/d/Y H:i') // for datetimepicker option dateFormat: 'mm/dd/yy'
   ->setRequired();
 
 $form->addSubmit('submit', 'Send');
@@ -40,7 +41,7 @@ if ($form->isSuccess())
 /*else
 {
   $form->setDefaults(array(
-    'datetime' => date('Y-m-d H:i')
+    'datetime' => date('d.m.Y H:i')
   ));
 }*/
 ?>
@@ -64,6 +65,7 @@ if ($form->isSuccess())
         duration: '',
         changeMonth: true,
         changeYear: true,
+        //dateFormat: 'mm/dd/yy',
         dateFormat: 'dd.mm.yy',
         yearRange: '2010:2020',
         stepMinute: 5

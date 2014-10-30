@@ -22,9 +22,13 @@ use Nette\Utils\DateTime;
  */
 class DateTimePicker extends TextInput
 {
-
+  /**
+   * Default format
+   *
+   * @var string
+   */
   private $format = 'd.m.Y H:i';
-  
+
   /**
    * Initialization
    *
@@ -37,12 +41,19 @@ class DateTimePicker extends TextInput
     parent::__construct($label, $cols, $maxLength);
   }
 
+  /**
+   * Sets custom format
+   *
+   * @param string $format format
+   * @return self
+   */
   public function setFormat($format)
   {
     $this->format = $format;
+
     return $this;
   }
-  
+
   /**
    * Returns date and time
    *
@@ -51,9 +62,7 @@ class DateTimePicker extends TextInput
   public function getValue()
   {
     if (strlen($this->value) > 0)
-    {
       return DateTime::createFromFormat($this->format, $this->value);
-    }
 
     return $this->value;
   }
@@ -67,10 +76,8 @@ class DateTimePicker extends TextInput
   public function setValue($value)
   {
     if ($value instanceof DateTime)
-    {
       $value = $value->format($this->format);
-    }
-    
+
     parent::setValue($value);
   }
 

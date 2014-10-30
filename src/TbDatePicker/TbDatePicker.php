@@ -13,6 +13,7 @@
 namespace RadekDostal\NetteComponents\DateTimePicker;
 
 use Nette\Forms\Controls\TextInput;
+use Nette\Utils\DateTime;
 
 /**
  * Twitter Bootstrap DatePicker Input Control
@@ -21,6 +22,13 @@ use Nette\Forms\Controls\TextInput;
  */
 class TbDatePicker extends TextInput
 {
+  /**
+   * Default format
+   *
+   * @var string
+   */
+  private $format = 'd.m.Y';
+
   /**
    * Initialization
    *
@@ -34,6 +42,19 @@ class TbDatePicker extends TextInput
   }
 
   /**
+   * Sets custom format
+   *
+   * @param string $format format
+   * @return self
+   */
+  public function setFormat($format)
+  {
+    $this->format = $format;
+
+    return $this;
+  }
+
+  /**
    * Returns date
    *
    * @return mixed
@@ -41,14 +62,7 @@ class TbDatePicker extends TextInput
   public function getValue()
   {
     if (strlen($this->value) > 0)
-    {
-      $date = preg_replace('~([[:space:]])~', '', $this->value);
-      $date = preg_replace('~\x{00a0}~siu', '', $date); // nonbreaking space
-      $date = explode('.', $date);
-
-      // Database date format: Y-m-d
-      return @$date[2].'-'.@$date[1].'-'.@$date[0];
-    }
+      return DateTime::createFromFormat($this->format, $this->value);
 
     return $this->value;
   }
@@ -61,7 +75,8 @@ class TbDatePicker extends TextInput
    */
   public function setValue($value)
   {
-    $value = preg_replace('~([0-9]{4})-([0-9]{2})-([0-9]{2})~', '$3.$2.$1', $value);
+    if ($value instanceof DateTime)
+      $value = $value->format($this->format);
 
     parent::setValue($value);
   }
