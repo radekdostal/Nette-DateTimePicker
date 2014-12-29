@@ -28,7 +28,7 @@ class DatePicker extends TextInput
    * @param int $cols width of element
    * @param int $maxLength maximum count of chars
    */
-  public function __construct($label, $cols = NULL, $maxLength = NULL)
+  public function __construct($label = NULL, $cols = NULL, $maxLength = NULL)
   {
     parent::__construct($label, $cols, $maxLength);
   }
