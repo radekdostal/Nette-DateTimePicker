@@ -30,8 +30,7 @@ $form->getElementPrototype()->class('form-horizontal');
 $form->addTbDatePicker('date', 'Date:', NULL, 10)
   //->setFormat('m/d/Y') // for en locale of moment.js
   ->setRequired()
-  ->setAttribute('class', 'form-control')
-  ->setAttribute('data-date-format', 'DD.MM.YYYY'); // because cs locale of moment.js contains nonbreaking spaces
+  ->setAttribute('class', 'form-control');
 
 $form->addSubmit('submit', 'Send')
   ->setAttribute('class', 'btn btn-default');
@@ -68,7 +67,7 @@ if ($form->isSuccess())
   <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
   <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
   <![endif]-->
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.3/moment-with-locales.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.4/moment-with-locales.min.js"></script>
   <script type="text/javascript" src="js/bootstrap/plugins/datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
   <script type="text/javascript">
     <!-- <![CDATA[
