@@ -5,7 +5,7 @@
  * @package   RadekDostal\NetteComponents\DateTimePicker
  * @example   http://addons.nette.org/radekdostal/nette-datetimepicker
  * @author    Ing. Radek Dostál <radek.dostal@gmail.com>
- * @copyright Copyright (c) 2010 - 2014 Radek Dostál
+ * @copyright Copyright (c) 2010 - 2015 Radek Dostál
  * @license   GNU Lesser General Public License
  * @link      http://www.radekdostal.cz
  */
