@@ -27,7 +27,7 @@ class DatePicker extends TextInput
    *
    * @var string
    */
-  private $format = 'd.m.Y';
+  private $format = 'd.n.Y';
 
   /**
    * Initialization
