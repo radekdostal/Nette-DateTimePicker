@@ -27,10 +27,10 @@ $form = new Form();
 
 $form->getElementPrototype()->class('form-horizontal');
 
-$form->addTbDatePicker('date', 'Date:', NULL, 10)
-  //->setFormat('m/d/Y') // for en locale of moment.js
+$form->addTbDatePicker('date', 'Date:')
+  //->setFormat('m/d/Y') // for en locale
   ->setRequired()
-  ->setAttribute('class', 'form-control');
+  ->setAttribute('class', 'form-control datepicker');
 
 $form->addSubmit('submit', 'Send')
   ->setAttribute('class', 'btn btn-default');
@@ -59,7 +59,7 @@ if ($form->isSuccess())
   <title>RadekDostal\NetteComponents\DateTimePicker\TbDatePicker example</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
-  <link rel="stylesheet" href="js/bootstrap/plugins/datetimepicker/css/bootstrap-datetimepicker.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.0.0/css/bootstrap-datetimepicker.min.css">
   <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -68,16 +68,15 @@ if ($form->isSuccess())
   <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
   <![endif]-->
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.4/moment-with-locales.min.js"></script>
-  <script type="text/javascript" src="js/bootstrap/plugins/datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.0.0/js/bootstrap-datetimepicker.min.js"></script>
   <script type="text/javascript">
     <!-- <![CDATA[
     $(document).ready(function()
     {
       $('.datepicker').datetimepicker(
       {
-        pickTime: false,
-        //language: 'en'
-        language: 'cs'
+        locale: 'cs',  // en
+        format: 'DD.MM.YYYY'  // MM/DD/YYYY
       });
     });
     //]]> -->
@@ -96,7 +95,7 @@ if ($form->isSuccess())
   <div class="form-group">
     <label for="date" class="control-label col-sm-3"><?php echo $form['date']->getLabel(); ?></label>
     <div class="col-sm-4 col-md-2">
-      <div class="input-group datepicker">
+      <div class="input-group">
         <?php echo $form['date']->getControl(); ?>
         <span class="input-group-addon">
           <span class="glyphicon glyphicon-calendar"></span>
