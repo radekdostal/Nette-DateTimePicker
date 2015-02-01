@@ -75,7 +75,7 @@ if ($form->isSuccess())
     {
       $('.datetimepicker').datetimepicker(
       {
-        locale: 'en',  // en
+        locale: 'cs',  // en
         format: 'DD.MM.YYYY H:mm'  // MM/DD/YYYY H:mm
       });
     });
