@@ -41,7 +41,7 @@ if ($form->isSuccess())
 /*else
 {
   $form->setDefaults(array(
-    'datetime' => date('d.m.Y H:i')
+    'datetime' => new \DateTime()
   ));
 }*/
 ?>
