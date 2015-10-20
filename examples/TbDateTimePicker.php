@@ -4,7 +4,7 @@
  *
  * @package   RadekDostal\NetteComponents\DateTimePicker
  * @example   http://addons.nette.org/radekdostal/nette-datetimepicker
- * @author    Ing. Radek Dostál <radek.dostal@gmail.com>
+ * @author    Ing. Radek Dostál, Ph.D. <radek.dostal@gmail.com>
  * @copyright Copyright (c) 2014 - 2015 Radek Dostál
  * @license   GNU Lesser General Public License
  * @link      http://www.radekdostal.cz
@@ -32,7 +32,7 @@ $form->addTbDateTimePicker('date', 'Date and time:')
 $form->addSubmit('submit', 'Send')
   ->setAttribute('class', 'btn btn-default');
 
-if ($form->isSuccess())
+if ($form->isSuccess() === TRUE)
 {
   echo '<h2>Form was submitted and successfully validated</h2>';
 
@@ -82,9 +82,9 @@ if ($form->isSuccess())
 <body>
   <h1>RadekDostal\NetteComponents\DateTimePicker\TbDateTimePicker example</h1>
   <?php $form->render('begin'); ?>
-  <?php if ($form->errors): ?>
+  <?php if ($form->hasErrors() === TRUE): ?>
   <ul class="error">
-    <?php foreach ($form->errors as $error): ?>
+    <?php foreach ($form->getErrors() as $error): ?>
     <li><?php echo htmlspecialchars($error) ?></li>
     <?php endforeach ?>
   </ul>

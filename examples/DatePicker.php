@@ -4,7 +4,7 @@
  *
  * @package   RadekDostal\NetteComponents\DateTimePicker
  * @example   http://addons.nette.org/radekdostal/nette-datetimepicker
- * @author    Ing. Radek Dostál <radek.dostal@gmail.com>
+ * @author    Ing. Radek Dostál, Ph.D. <radek.dostal@gmail.com>
  * @copyright Copyright (c) 2014 - 2015 Radek Dostál
  * @license   GNU Lesser General Public License
  * @link      http://www.radekdostal.cz
@@ -28,7 +28,7 @@ $form->addDatePicker('date', 'Date:', 10, 10)
 
 $form->addSubmit('submit', 'Send');
 
-if ($form->isSuccess())
+if ($form->isSuccess() === TRUE)
 {
   echo '<h2>Form was submitted and successfully validated</h2>';
 
