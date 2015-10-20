@@ -12,7 +12,8 @@ This add-on creates input box to select date or date and time.
 ## Requirements
 
 - **[PHP](http://php.net)** 5.3 or later
-- **[Nette Framework](http://nette.org)** 2.2 or later
+- **[Nette Forms](https://github.com/nette/forms)** 2.2 or later
+- **[Nette Utility Classes](https://github.com/nette/utils)** 2.2 or later
 - **[jQuery](http://jquery.com)** 1.9.1 or later
 - **[jQuery UI](http://jqueryui.com)** 1.10.2 or later (DatePicker and DateTimePicker only)
 - **[jQuery Timepicker Addon](http://trentrichardson.com/examples/timepicker)** 1.2 or later (DateTimePicker only)
