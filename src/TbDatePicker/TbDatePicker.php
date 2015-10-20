@@ -4,7 +4,7 @@
  *
  * @package   RadekDostal\NetteComponents\DateTimePicker
  * @example   http://addons.nette.org/radekdostal/nette-datetimepicker
- * @author    Ing. Radek Dostál <radek.dostal@gmail.com>
+ * @author    Ing. Radek Dostál, Ph.D. <radek.dostal@gmail.com>
  * @copyright Copyright (c) 2014 - 2015 Radek Dostál
  * @license   GNU Lesser General Public License
  * @link      http://www.radekdostal.cz
@@ -12,6 +12,7 @@
 
 namespace RadekDostal\NetteComponents\DateTimePicker;
 
+use Nette\Forms\Container;
 use Nette\Forms\Controls\TextInput;
 use Nette\Utils\DateTime;
 
@@ -79,5 +80,24 @@ class TbDatePicker extends TextInput
       $value = $value->format($this->format);
 
     parent::setValue($value);
+  }
+
+  /**
+   * Registers this control
+   *
+   * @param string $format format
+   * @return self
+   */
+  public static function register($format = NULL)
+  {
+    Container::extensionMethod('addTbDatePicker', function($container, $name, $label = NULL, $cols = NULL, $maxLength = NULL) use ($format)
+    {
+      $picker = $container[$name] = new TbDatePicker($label, $cols, $maxLength);
+
+      if ($format !== NULL)
+        $picker->setFormat($format);
+
+      return $picker;
+    });
   }
 }

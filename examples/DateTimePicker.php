@@ -18,10 +18,7 @@ require '../vendor/autoload.php';
 Debugger::$strictMode = TRUE;
 Debugger::enable();
 
-Form::extensionMethod('addDateTimePicker', function(Form $_this, $name, $label = NULL, $cols = NULL, $maxLength = NULL)
-{
-  return $_this[$name] = new RadekDostal\NetteComponents\DateTimePicker\DateTimePicker($label, $cols, $maxLength);
-});
+RadekDostal\NetteComponents\DateTimePicker\DateTimePicker::register();
 
 $form = new Form();
 
