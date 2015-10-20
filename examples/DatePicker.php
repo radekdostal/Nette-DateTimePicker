@@ -25,6 +25,7 @@ $form = new Form();
 $form->addDatePicker('date', 'Date:', 10)
   //->setFormat('m/d/Y') // for datepicker option dateFormat: 'mm/dd/yy'
   ->setAttribute('size', 10)
+  //->setReadOnly(FALSE)
   ->setRequired();
 
 $form->addSubmit('submit', 'Send');

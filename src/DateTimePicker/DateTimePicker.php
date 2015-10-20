@@ -31,6 +31,13 @@ class DateTimePicker extends TextInput
   private $format = 'd.m.Y H:i';
 
   /**
+   * State
+   *
+   * @var bool
+   */
+  private $readonly = TRUE;
+
+  /**
    * Initialization
    *
    * @param string $label label
@@ -82,6 +89,20 @@ class DateTimePicker extends TextInput
   }
 
   /**
+   * Sets the date input box to read only and only allow change via the date
+   * picker or vice versa, allow changing the field value directly
+   *
+   * @param bool $state
+   * @return self
+   */
+  public function setReadOnly($state)
+  {
+    $this->readonly = (bool) $state;
+
+    return $this;
+  }
+
+  /**
    * Generates control's HTML element
    *
    * @return \Nette\Utils\Html
@@ -91,7 +112,7 @@ class DateTimePicker extends TextInput
     $control = parent::getControl();
 
     $control->class = 'datetimepicker form-control';
-    $control->readonly = TRUE;
+    $control->readonly = $this->readonly;
 
     return $control;
   }
