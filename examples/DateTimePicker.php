@@ -22,8 +22,9 @@ RadekDostal\NetteComponents\DateTimePicker\DateTimePicker::register();
 
 $form = new Form();
 
-$form->addDateTimePicker('datetime', 'Date and time:', 16, 16)
+$form->addDateTimePicker('datetime', 'Date and time:', 16)
   //->setFormat('m/d/Y H:i') // for datetimepicker option dateFormat: 'mm/dd/yy'
+  ->setAttribute('size', 16)
   ->setRequired();
 
 $form->addSubmit('submit', 'Send');

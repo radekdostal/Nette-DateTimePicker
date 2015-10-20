@@ -34,12 +34,11 @@ class DatePicker extends TextInput
    * Initialization
    *
    * @param string $label label
-   * @param int $cols width of element
    * @param int $maxLength maximum count of chars
    */
-  public function __construct($label = NULL, $cols = NULL, $maxLength = NULL)
+  public function __construct($label = NULL, $maxLength = NULL)
   {
-    parent::__construct($label, $cols, $maxLength);
+    parent::__construct($label, $maxLength);
   }
 
   /**
@@ -105,9 +104,9 @@ class DatePicker extends TextInput
    */
   public static function register($format = NULL)
   {
-    Container::extensionMethod('addDatePicker', function($container, $name, $label = NULL, $cols = NULL, $maxLength = NULL) use ($format)
+    Container::extensionMethod('addDatePicker', function($container, $name, $label = NULL, $maxLength = NULL) use ($format)
     {
-      $picker = $container[$name] = new DatePicker($label, $cols, $maxLength);
+      $picker = $container[$name] = new DatePicker($label, $maxLength);
 
       if ($format !== NULL)
         $picker->setFormat($format);

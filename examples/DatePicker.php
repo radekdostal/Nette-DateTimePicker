@@ -22,8 +22,9 @@ RadekDostal\NetteComponents\DateTimePicker\DatePicker::register();
 
 $form = new Form();
 
-$form->addDatePicker('date', 'Date:', 10, 10)
+$form->addDatePicker('date', 'Date:', 10)
   //->setFormat('m/d/Y') // for datepicker option dateFormat: 'mm/dd/yy'
+  ->setAttribute('size', 10)
   ->setRequired();
 
 $form->addSubmit('submit', 'Send');
