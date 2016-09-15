@@ -27,7 +27,9 @@ $form->getElementPrototype()->class('form-horizontal');
 $form->addTbDatePicker('date', 'Date:')
   //->setFormat('m/d/Y') // for en locale
   ->setRequired()
-  ->setAttribute('class', 'form-control datepicker');
+  ->setAttribute('class', 'form-control')
+  ->getLabelPrototype()
+  ->setAttribute('class', 'control-label col-sm-3');
 
 $form->addSubmit('submit', 'Send')
   ->setAttribute('class', 'btn btn-default');
@@ -56,24 +58,27 @@ if ($form->isSuccess() === TRUE)
   <title>RadekDostal\NetteComponents\DateTimePicker\TbDatePicker example</title>
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.min.css">
-  <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/smalot-bootstrap-datetimepicker/2.3.11/css/bootstrap-datetimepicker.min.css">
+  <script type="text/javascript" src="//code.jquery.com/jquery-3.1.0.min.js"></script>
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
   <script src="//oss.maxcdn.com/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
   <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
   <![endif]-->
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment-with-locales.min.js"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/smalot-bootstrap-datetimepicker/2.3.11/js/bootstrap-datetimepicker.min.js"></script>
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/smalot-bootstrap-datetimepicker/2.3.11/js/locales/bootstrap-datetimepicker.cs.js"></script>
   <script type="text/javascript">
     <!-- <![CDATA[
     $(document).ready(function()
     {
       $('.datepicker').datetimepicker(
       {
-        locale: 'cs',  // en
-        format: 'DD.MM.YYYY'  // MM/DD/YYYY
+        language: 'cs',  // en
+        format: 'dd.mm.yyyy',  // mm/dd/yyyy
+        minView: 'month',
+        autoclose: true,
+        todayBtn: true
       });
     });
     //]]> -->
@@ -90,9 +95,9 @@ if ($form->isSuccess() === TRUE)
   </ul>
   <?php endif ?>
   <div class="form-group">
-    <label for="date" class="control-label col-sm-3"><?php echo $form['date']->getLabel(); ?></label>
+    <?php echo $form['date']->getLabel(); ?>
     <div class="col-sm-4 col-md-2">
-      <div class="input-group">
+      <div class="input-group date datepicker">
         <?php echo $form['date']->getControl(); ?>
         <span class="input-group-addon">
           <span class="glyphicon glyphicon-calendar"></span>
