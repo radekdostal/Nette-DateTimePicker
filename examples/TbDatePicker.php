@@ -76,7 +76,7 @@ if ($form->isSuccess() === TRUE)
       {
         language: 'cs',  // en
         format: 'dd.mm.yyyy',  // mm/dd/yyyy
-        minView: 'month',
+        startView: 'month',
         autoclose: true,
         todayBtn: true
       });
