@@ -1,7 +1,7 @@
 {
   "name": "radekdostal/nette-datetimepicker",
   "description": "DatePicker and DateTimePicker input controls for Nette Framework",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "type": "library",
   "authors": [
     {
