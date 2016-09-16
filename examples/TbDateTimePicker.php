@@ -27,6 +27,9 @@ $form->getElementPrototype()->class('form-horizontal');
 $form->addTbDateTimePicker('date', 'Date and time:')
   //->setFormat('m/d/Y H:i') // for en locale
   ->setRequired()
+  //->addRule(Form::MIN, NULL, new DateTime('2016-09-01 13:20'))
+  //->addRule(Form::MAX, NULL, new DateTime('2016-09-15 15:30'))
+  //->addRule(Form::RANGE, NULL, array(new DateTime('2016-09-01 13:20'), new DateTime('2016-09-15 15:30')))
   ->setAttribute('class', 'form-control')
   ->getLabelPrototype()
   ->setAttribute('class', 'control-label col-sm-3');

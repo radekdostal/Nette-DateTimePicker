@@ -3,9 +3,9 @@
  * Twitter Bootstrap DatePicker Input Control
  *
  * @package   RadekDostal\NetteComponents\DateTimePicker
- * @example   http://addons.nette.org/radekdostal/nette-datetimepicker
+ * @example   https://componette.com/radekdostal/nette-datetimepicker/
  * @author    Ing. Radek Dostál, Ph.D. <radek.dostal@gmail.com>
- * @copyright Copyright (c) 2014 - 2015 Radek Dostál
+ * @copyright Copyright (c) 2014 - 2016 Radek Dostál
  * @license   GNU Lesser General Public License
  * @link      http://www.radekdostal.cz
  */
@@ -14,6 +14,8 @@ namespace RadekDostal\NetteComponents\DateTimePicker;
 
 use Nette\Forms\Container;
 use Nette\Forms\Controls\TextInput;
+use Nette\Forms\Form;
+use Nette\Forms\Rules;
 use Nette\Utils\DateTime;
 
 /**
@@ -29,6 +31,30 @@ class TbDatePicker extends TextInput
    * @var string
    */
   private $format = 'd.m.Y';
+
+  /**
+   * Range
+   *
+   * @var array
+   */
+  private $range = array(
+    'min' => NULL,
+    'max' => NULL
+  );
+
+  /**
+   * Minimum date
+   *
+   * @var \DateTime
+   */
+  private $minDate;
+
+  /**
+   * Maximum date
+   *
+   * @var \DateTime
+   */
+  private $maxDate;
 
   /**
    * Initialization
@@ -62,7 +88,7 @@ class TbDatePicker extends TextInput
   public function getValue()
   {
     if (strlen($this->value) > 0)
-      return DateTime::createFromFormat($this->format, $this->value);
+      return (DateTime::createFromFormat($this->format, $this->value))->setTime(0, 0, 0);
 
     return $this->value;
   }
@@ -82,6 +108,91 @@ class TbDatePicker extends TextInput
   }
 
   /**
+   * Adds a validation rule
+   *
+   * @param mixed $validator rule type
+   * @param string $message message to display for invalid data
+   * @param mixed $arg optional rule arguments
+   * @return self
+   */
+  public function addRule($validator, $message = NULL, $arg = NULL)
+  {
+    if ($validator === Form::MIN)
+    {
+      $this->minDate = $arg;
+
+      $arg = $arg->format($this->format);
+
+      $validator = __CLASS__.'::validateMin';
+    }
+    else if ($validator === Form::MAX)
+    {
+      $this->maxDate = $arg;
+
+      $arg = $arg->format($this->format);
+
+      $validator = __CLASS__.'::validateMax';
+    }
+    else if ($validator === Form::RANGE)
+    {
+      $this->range['min'] = $arg[0];
+      $this->range['max'] = $arg[1];
+
+      $arg[0] = $arg[0]->format($this->format);
+      $arg[1] = $arg[1]->format($this->format);
+
+      $validator = __CLASS__.'::validateRange';
+    }
+
+    return parent::addRule($validator, $message, $arg);
+  }
+
+  /**
+   * Validates minimum date
+   *
+   * @param self $control control
+   * @return bool
+   */
+  public static function validateMin(self $control)
+  {
+    return $control->getValue() >= $control->minDate;
+  }
+
+  /**
+   * Validates maximum date
+   *
+   * @param self $control control
+   * @return bool
+   */
+  public static function validateMax(self $control)
+  {
+    return $control->getValue() <= $control->maxDate;
+  }
+
+  /**
+   * Validates range
+   *
+   * @param self $control control
+   * @return bool
+   */
+  public static function validateRange(self $control)
+  {
+    if ($control->range['min'] !== NULL)
+    {
+      if ($control->range['min'] > $control->getValue())
+        return FALSE;
+    }
+
+    if ($control->range['max'] !== NULL)
+    {
+      if ($control->range['max'] < $control->getValue())
+        return FALSE;
+    }
+
+    return TRUE;
+  }
+
+  /**
    * Registers this control
    *
    * @param string $format format
@@ -98,5 +209,9 @@ class TbDatePicker extends TextInput
 
       return $picker;
     });
+
+    Rules::$defaultMessages[__CLASS__.'::validateMin'] = Rules::$defaultMessages[Form::MIN];
+    Rules::$defaultMessages[__CLASS__.'::validateMax'] = Rules::$defaultMessages[Form::MAX];
+    Rules::$defaultMessages[__CLASS__.'::validateRange'] = Rules::$defaultMessages[Form::RANGE];
   }
 }

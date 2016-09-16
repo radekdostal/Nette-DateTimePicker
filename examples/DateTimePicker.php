@@ -24,9 +24,12 @@ $form = new Form();
 
 $form->addDateTimePicker('datetime', 'Date and time:', 16)
   //->setFormat('m/d/Y H:i') // for datetimepicker option dateFormat: 'mm/dd/yy'
-  ->setAttribute('size', 16)
   //->setReadOnly(FALSE)
-  ->setRequired();
+  ->setRequired()
+  //->addRule(Form::MIN, NULL, new DateTime('2016-09-01 13:20'))
+  //->addRule(Form::MAX, NULL, new DateTime('2016-09-15 15:30'))
+  //->addRule(Form::RANGE, NULL, array(new DateTime('2016-09-01 13:20'), new DateTime('2016-09-15 15:30')))
+  ->setAttribute('size', 16);
 
 $form->addSubmit('submit', 'Send');
 

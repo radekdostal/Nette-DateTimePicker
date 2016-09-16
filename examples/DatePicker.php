@@ -24,9 +24,12 @@ $form = new Form();
 
 $form->addDatePicker('date', 'Date:', 10)
   //->setFormat('m/d/Y') // for datepicker option dateFormat: 'mm/dd/yy'
-  ->setAttribute('size', 10)
   //->setReadOnly(FALSE)
-  ->setRequired();
+  ->setRequired()
+  //->addRule(Form::MIN, NULL, new DateTime('2016-09-01'))
+  //->addRule(Form::MAX, NULL, new DateTime('2016-09-15'))
+  //->addRule(Form::RANGE, NULL, array(new DateTime('2016-09-01'), new DateTime('2016-09-15')))
+  ->setAttribute('size', 10);
 
 $form->addSubmit('submit', 'Send');
 

@@ -27,6 +27,9 @@ $form->getElementPrototype()->class('form-horizontal');
 $form->addTbDatePicker('date', 'Date:')
   //->setFormat('m/d/Y') // for en locale
   ->setRequired()
+  //->addRule(Form::MIN, NULL, new DateTime('2016-09-01'))
+  //->addRule(Form::MAX, NULL, new DateTime('2016-09-15'))
+  //->addRule(Form::RANGE, NULL, array(new DateTime('2016-09-01'), new DateTime('2016-09-15')))
   ->setAttribute('class', 'form-control')
   ->getLabelPrototype()
   ->setAttribute('class', 'control-label col-sm-3');
@@ -77,6 +80,8 @@ if ($form->isSuccess() === TRUE)
         language: 'cs',  // en
         format: 'dd.mm.yyyy',  // mm/dd/yyyy
         minView: 'month',
+        //startDate: '2016-09-01',
+        //endDate: '2016-09-15',
         autoclose: true,
         todayBtn: true
       });
