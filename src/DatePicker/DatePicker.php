@@ -95,7 +95,11 @@ class DatePicker extends TextInput
   public function getValue()
   {
     if (strlen($this->value) > 0)
-      return (DateTime::createFromFormat($this->format, $this->value))->setTime(0, 0, 0);
+    {
+      $datetime = DateTime::createFromFormat($this->format, $this->value);
+
+      return $datetime->setTime(0, 0, 0);
+    }
 
     return $this->value;
   }
