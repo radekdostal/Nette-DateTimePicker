@@ -12,8 +12,9 @@ This add-on creates input box to select date or date and time.
 ## Requirements
 
 - **[PHP](https://php.net)** 5.3 or later
-- **[Nette Forms](https://github.com/nette/forms)** 2.2 or later
-- **[Nette Utility Classes](https://github.com/nette/utils)** 2.2 or later
+- **[Nette Dependency Injection](https://github.com/nette/di)** 2.2 or later
+- **[Nette Forms: greatly facilitates secure web forms](https://github.com/nette/forms)** 2.2 or later
+- **[Nette Utilities and Core Classes](https://github.com/nette/utils)** 2.2 or later
 - **[jQuery](https://jquery.com)** 1.9.1 or later
 - **[jQuery UI](https://jqueryui.com)** 1.10.2 or later (DatePicker and DateTimePicker only)
 - **[jQuery Timepicker Addon](http://trentrichardson.com/examples/timepicker)** 1.2 or later (DateTimePicker only)
@@ -25,3 +26,25 @@ LGPL licenses are very very long, so instead of including them here we offer you
 
 - [LGPL version 2.1](https://www.gnu.org/licenses/lgpl-2.1.html)
 - [LGPL version 3](https://www.gnu.org/licenses/lgpl-3.0.html)
+
+## Example of using DI extension
+
+config.neon:
+
+```php
+extensions:
+  tbDatePicker: RadekDostal\NetteComponents\DateTimePicker\TbDatePicker\DI\TbDatePickerExtension
+ 
+tbDatePicker:
+  format: j. n. Y
+```
+
+Part of form definition:
+
+```php
+$this->addTbDatePicker('date', 'Date')
+  ->setRequired()
+  ->addRule(self::RANGE, NULL, array(new \DateTime('2016-09-01'), new \DateTime('2016-09-15')));
+```
+
+Learn more in [examples](https://github.com/radekdostal/Nette-DateTimePicker/tree/master/examples).
