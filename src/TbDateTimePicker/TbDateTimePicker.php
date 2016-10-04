@@ -15,7 +15,9 @@ namespace RadekDostal\NetteComponents\DateTimePicker;
 use Nette\Forms\Container;
 use Nette\Forms\Controls\TextInput;
 use Nette\Forms\Form;
+use Nette\Forms\IControl;
 use Nette\Forms\Rules;
+use Nette\Forms\Validator;
 use Nette\Utils\DateTime;
 
 /**
@@ -148,23 +150,25 @@ class TbDateTimePicker extends TextInput
   }
 
   /**
-   * Validates minimum date
+   * Validates minimum date and time
    *
-   * @param self $control control
+   * @param \Nette\Forms\IControl $control control
+   * @param mixed $minimum minimum date and time
    * @return bool
    */
-  public static function validateMin(self $control)
+  public static function validateMin(IControl $control, $minimum)
   {
     return $control->getValue() >= $control->minDate;
   }
 
   /**
-   * Validates maximum date
+   * Validates maximum date and time
    *
-   * @param self $control control
+   * @param \Nette\Forms\IControl $control control
+   * @param mixed $maximum maximum date and time
    * @return bool
    */
-  public static function validateMax(self $control)
+  public static function validateMax(IControl $control, $maximum)
   {
     return $control->getValue() <= $control->maxDate;
   }
@@ -172,10 +176,11 @@ class TbDateTimePicker extends TextInput
   /**
    * Validates range
    *
-   * @param self $control control
+   * @param \Nette\Forms\IControl $control control
+   * @param array $range minimum and maximum dates and times
    * @return bool
    */
-  public static function validateRange(self $control)
+  public static function validateRange(IControl $control, $range)
   {
     if ($control->range['min'] !== NULL)
     {
@@ -210,8 +215,18 @@ class TbDateTimePicker extends TextInput
       return $picker;
     });
 
-    Rules::$defaultMessages[__CLASS__.'::validateMin'] = Rules::$defaultMessages[Form::MIN];
-    Rules::$defaultMessages[__CLASS__.'::validateMax'] = Rules::$defaultMessages[Form::MAX];
-    Rules::$defaultMessages[__CLASS__.'::validateRange'] = Rules::$defaultMessages[Form::RANGE];
+    // Nette >= 2.3
+    if (class_exists('\Nette\Forms\Validator') === TRUE)
+    {
+      Validator::$messages[__CLASS__.'::validateMin'] = Validator::$messages[Form::MIN];
+      Validator::$messages[__CLASS__.'::validateMax'] = Validator::$messages[Form::MAX];
+      Validator::$messages[__CLASS__.'::validateRange'] = Validator::$messages[Form::RANGE];
+    }
+    else
+    {
+      Rules::$defaultMessages[__CLASS__.'::validateMin'] = Rules::$defaultMessages[Form::MIN];
+      Rules::$defaultMessages[__CLASS__.'::validateMax'] = Rules::$defaultMessages[Form::MAX];
+      Rules::$defaultMessages[__CLASS__.'::validateRange'] = Rules::$defaultMessages[Form::RANGE];
+    }
   }
 }
