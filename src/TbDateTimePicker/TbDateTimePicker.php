@@ -89,9 +89,14 @@ class TbDateTimePicker extends TextInput
    */
   public function getValue()
   {
-    if (strlen($this->value) > 0)
-      return DateTime::createFromFormat($this->format, $this->value);
-
+    if (strlen($this->value) > 0){
+      $datetime = DateTime::createFromFormat($this->format, $this->value);
+      if($datetime === false){
+        $this->addError($this->getValueErrorMessage());
+        return false;
+      }
+      return $datetime;
+    }
     return $this->value;
   }
 
@@ -221,12 +226,27 @@ class TbDateTimePicker extends TextInput
       Validator::$messages[__CLASS__.'::validateMin'] = Validator::$messages[Form::MIN];
       Validator::$messages[__CLASS__.'::validateMax'] = Validator::$messages[Form::MAX];
       Validator::$messages[__CLASS__.'::validateRange'] = Validator::$messages[Form::RANGE];
+      Validator::$messages[__CLASS__.'::valueError'] = 'Enter valid date format';
     }
     else
     {
       Rules::$defaultMessages[__CLASS__.'::validateMin'] = Rules::$defaultMessages[Form::MIN];
       Rules::$defaultMessages[__CLASS__.'::validateMax'] = Rules::$defaultMessages[Form::MAX];
       Rules::$defaultMessages[__CLASS__.'::validateRange'] = Rules::$defaultMessages[Form::RANGE];
+      Rules::$defaultMessages[__CLASS__.'::valueError'] = 'Enter valid date format';
     }
+  }
+
+  protected function getValueErrorMessage()
+  {
+    if (class_exists('\Nette\Forms\Validator') === TRUE)
+    {
+      $msg = Validator::$messages[__CLASS__.'::valueError'];
+    }
+    else
+    {
+      $msg = Rules::$defaultMessages[__CLASS__.'::valueError'];
+    }
+    return sprintf($msg);
   }
 }
