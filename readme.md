@@ -39,12 +39,18 @@ tbDatePicker:
   format: j. n. Y
 ```
 
-Part of form definition:
+Part of form definition where date is optional (**Nette 2.4**):
 
 ```php
 $this->addTbDatePicker('date', 'Date')
-  ->setRequired()
+  ->setRequired(FALSE)
   ->addRule(self::RANGE, NULL, array(new \DateTime('2016-09-01'), new \DateTime('2016-09-15')));
+```
+
+Part of form definition where date is optional (**Nette &lt; 2.4**):
+```php
+$this->addTbDatePicker('date', 'Date')
+  ->addConditionalRule(self::RANGE, NULL, array(new \DateTime('2016-09-01'), new \DateTime('2016-09-15')));
 ```
 
 Learn more in [examples](https://github.com/radekdostal/Nette-DateTimePicker/tree/master/examples).

@@ -29,6 +29,12 @@ $form->addDateTimePicker('datetime', 'Date and time:', 16)
   //->addRule(Form::MIN, NULL, new DateTime('2016-09-01 13:20'))
   //->addRule(Form::MAX, NULL, new DateTime('2016-09-15 15:30'))
   //->addRule(Form::RANGE, NULL, array(new DateTime('2016-09-01 13:20'), new DateTime('2016-09-15 15:30')))
+
+  // Nette < 2.4 where date and time is optional
+  //->addConditionalRule(Form::MIN, NULL, new DateTime('2016-09-01 13:20'))
+  //->addConditionalRule(Form::MAX, NULL, new DateTime('2016-09-15 15:30'))
+  //->addConditionalRule(Form::RANGE, NULL, array(new DateTime('2016-09-01 13:20'), new DateTime('2016-09-15 15:30')))
+
   ->setAttribute('size', 16);
 
 $form->addSubmit('submit', 'Send');
