@@ -61,7 +61,7 @@ if ($form->isSuccess() === TRUE)
   <title>RadekDostal\NetteComponents\DateTimePicker\DateTimePicker example</title>
   <link rel="stylesheet" type="text/css" href="//code.jquery.com/ui/1.12.0/themes/smoothness/jquery-ui.css">
   <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/jquery-ui-timepicker-addon/1.6.3/jquery-ui-timepicker-addon.min.css">
-  <script type="text/javascript" src="//code.jquery.com/jquery-3.1.0.min.js"></script>
+  <script type="text/javascript" src="//code.jquery.com/jquery-3.2.1.min.js"></script>
   <script type="text/javascript" src="//code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
   <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-ui-timepicker-addon/1.6.3/jquery-ui-timepicker-addon.min.js"></script>
   <script type="text/javascript">
