@@ -45,7 +45,7 @@ class DatePicker extends AbstractDateTimePicker
   {
     if (strlen($this->value) > 0)
     {
-      $date = DateTime::createFromFormat($this->format, $this->value);
+      $date = DateTime::createFromFormat($this->format.'|', $this->value);
 
       if ($date === FALSE)
       {
@@ -54,7 +54,7 @@ class DatePicker extends AbstractDateTimePicker
         return FALSE;
       }
 
-      return $date->setTime(0, 0, 0);
+      return $date;
     }
 
     return $this->value;
