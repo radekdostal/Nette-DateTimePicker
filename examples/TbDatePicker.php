@@ -67,7 +67,7 @@ if ($form->isSuccess() === TRUE)
   <title>RadekDostal\NetteComponents\DateTimePicker\TbDatePicker example</title>
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/smalot-bootstrap-datetimepicker/2.3.11/css/bootstrap-datetimepicker.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/smalot-bootstrap-datetimepicker/2.4.4/css/bootstrap-datetimepicker.min.css">
   <script type="text/javascript" src="//code.jquery.com/jquery-3.1.0.min.js"></script>
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -75,8 +75,8 @@ if ($form->isSuccess() === TRUE)
   <script src="//oss.maxcdn.com/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
   <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
   <![endif]-->
-  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/smalot-bootstrap-datetimepicker/2.3.11/js/bootstrap-datetimepicker.min.js"></script>
-  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/smalot-bootstrap-datetimepicker/2.3.11/js/locales/bootstrap-datetimepicker.cs.js"></script>
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/smalot-bootstrap-datetimepicker/2.4.4/js/bootstrap-datetimepicker.min.js"></script>
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/smalot-bootstrap-datetimepicker/2.4.4/js/locales/bootstrap-datetimepicker.cs.js"></script>
   <script type="text/javascript">
     <!-- <![CDATA[
     $(document).ready(function()
