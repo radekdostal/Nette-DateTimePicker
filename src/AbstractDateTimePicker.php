@@ -81,7 +81,7 @@ abstract class AbstractDateTimePicker extends TextInput
    */
   public function setValue($value)
   {
-    if ($value instanceof \DateTime)
+    if ($value instanceof \DateTime || $value instanceof \DateTimeImmutable)
       $value = $value->format($this->format);
 
     if ($this->message !== NULL && $this->value !== NULL)
@@ -179,7 +179,7 @@ abstract class AbstractDateTimePicker extends TextInput
       }
     }
 
-    return $this->getValue() instanceof \DateTime ? $this->addRule($validator, $message, $arg) : $this;
+    return $this->getValue() instanceof \DateTime || $this->getValue() instanceof \DateTimeImmutable ? $this->addRule($validator, $message, $arg) : $this;
   }
 
   /**
