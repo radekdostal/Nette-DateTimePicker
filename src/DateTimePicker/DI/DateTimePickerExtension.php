@@ -5,9 +5,9 @@
  * @package   RadekDostal\NetteComponents\DateTimePicker
  * @example   https://componette.com/radekdostal/nette-datetimepicker/
  * @author    Ing. Radek Dostál, Ph.D. <radek.dostal@gmail.com>
- * @copyright Copyright (c) 2016 Radek Dostál
+ * @copyright Copyright (c) 2016 - 2018 Radek Dostál
  * @license   GNU Lesser General Public License
- * @link      http://www.radekdostal.cz
+ * @link      https://www.radekdostal.cz
  */
 
 namespace RadekDostal\NetteComponents\DateTimePicker\DateTimePicker\DI;
