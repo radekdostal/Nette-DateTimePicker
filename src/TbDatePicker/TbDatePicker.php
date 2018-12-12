@@ -50,7 +50,7 @@ class TbDatePicker extends AbstractDateTimePicker
       return $date;
     }
 
-    return $this->value;
+    return parent::getValue();
   }
 
   /**

@@ -57,7 +57,7 @@ class DateTimePicker extends AbstractDateTimePicker
       return $datetime;
     }
 
-    return $this->value;
+    return parent::getValue();
   }
 
   /**
