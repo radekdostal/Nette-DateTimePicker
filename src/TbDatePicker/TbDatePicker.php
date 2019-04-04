@@ -5,7 +5,7 @@
  * @package   RadekDostal\NetteComponents\DateTimePicker
  * @example   https://componette.com/radekdostal/nette-datetimepicker/
  * @author    Ing. Radek Dostál, Ph.D. <radek.dostal@gmail.com>
- * @copyright Copyright (c) 2014 - 2018 Radek Dostál
+ * @copyright Copyright © 2014 - 2019 Radek Dostál
  * @license   GNU Lesser General Public License
  * @link      https://www.radekdostal.cz
  */
@@ -22,18 +22,10 @@ use Nette\Utils\DateTime;
  */
 class TbDatePicker extends AbstractDateTimePicker
 {
-  /**
-   * Default format
-   *
-   * @var string
-   */
+  /** @var string */
   protected $format = 'd.m.Y';
 
-  /**
-   * Returns date
-   *
-   * @return mixed
-   */
+  /** @return mixed */
   public function getValue()
   {
     if (strlen($this->value) > 0)
@@ -53,15 +45,9 @@ class TbDatePicker extends AbstractDateTimePicker
     return parent::getValue();
   }
 
-  /**
-   * Registers this control
-   *
-   * @param string $format format
-   * @return self
-   */
-  public static function register($format = NULL)
+  public static function register(string $format = NULL): void
   {
-    Container::extensionMethod('addTbDatePicker', function($container, $name, $label = NULL, $maxLength = NULL) use ($format)
+    Container::extensionMethod('addTbDatePicker', function($container, $name, $label = NULL, int $maxLength = NULL) use ($format)
     {
       $picker = $container[$name] = new TbDatePicker($label, $maxLength);
 

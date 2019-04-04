@@ -5,7 +5,7 @@
  * @package   RadekDostal\NetteComponents\DateTimePicker
  * @example   https://componette.com/radekdostal/nette-datetimepicker/
  * @author    Ing. Radek Dostál, Ph.D. <radek.dostal@gmail.com>
- * @copyright Copyright (c) 2014 - 2018 Radek Dostál
+ * @copyright Copyright © 2014 - 2019 Radek Dostál
  * @license   GNU Lesser General Public License
  * @link      https://www.radekdostal.cz
  */
@@ -28,14 +28,8 @@ $form->addDatePicker('date', 'Date:', 10)
   ->setRequired()
   //->addRule(Form::MIN, NULL, new DateTime('2016-09-01'))
   //->addRule(Form::MAX, NULL, new DateTime('2016-09-15'))
-  //->addRule(Form::RANGE, NULL, array(new DateTime('2016-09-01'), new DateTime('2016-09-15')))
-
-  // Nette < 2.4 where date is optional
-  //->addConditionalRule(Form::MIN, NULL, new DateTime('2016-09-01'))
-  //->addConditionalRule(Form::MAX, NULL, new DateTime('2016-09-15'))
-  //->addConditionalRule(Form::RANGE, NULL, array(new DateTime('2016-09-01'), new DateTime('2016-09-15')))
-
-  ->setAttribute('size', 10);
+  //->addRule(Form::RANGE, NULL, [new DateTime('2016-09-01'), new DateTime('2016-09-15')])
+  ->setHtmlAttribute('size', 10);
 
 $form->addSubmit('submit', 'Send');
 
@@ -48,9 +42,9 @@ if ($form->isSuccess() === TRUE)
 }
 /*else
 {
-  $form->setDefaults(array(
+  $form->setDefaults([
     'date' => new \DateTime()
-  ));
+  ]);
 }*/
 ?>
 <!DOCTYPE html>
@@ -60,8 +54,8 @@ if ($form->isSuccess() === TRUE)
   <meta name="author" content="Radek Dostál">
   <title>RadekDostal\NetteComponents\DateTimePicker\DatePicker example</title>
   <link rel="stylesheet" type="text/css" href="//code.jquery.com/ui/1.12.0/themes/smoothness/jquery-ui.css">
-  <script type="text/javascript" src="//code.jquery.com/jquery-3.2.1.min.js"></script>
-  <script type="text/javascript" src="//code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
   <script type="text/javascript">
     <!-- <![CDATA[
     $(document).ready(function()
@@ -70,8 +64,7 @@ if ($form->isSuccess() === TRUE)
       {
         changeMonth: true,
         changeYear: true,
-        //dateFormat: 'mm/dd/yy',
-        dateFormat: 'dd.mm.yy',
+        dateFormat: 'dd.mm.yy',  // mm/dd/yy
         yearRange: '2010:2020'
       });
     });
