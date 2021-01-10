@@ -5,7 +5,7 @@
  * @package   RadekDostal\NetteComponents\DateTimePicker
  * @example   https://componette.com/radekdostal/nette-datetimepicker/
  * @author    Ing. Radek Dostál, Ph.D. <radek.dostal@gmail.com>
- * @copyright Copyright © 2014 - 2019 Radek Dostál
+ * @copyright Copyright © 2014 - 2021 Radek Dostál
  * @license   GNU Lesser General Public License
  * @link      https://www.radekdostal.cz
  */
@@ -47,7 +47,7 @@ class TbDatePicker extends AbstractDateTimePicker
 
   public static function register(string $format = NULL): void
   {
-    Container::extensionMethod('addTbDatePicker', function($container, $name, $label = NULL, int $maxLength = NULL) use ($format)
+    Container::extensionMethod('addTbDatePicker', function($container, $name, $label = NULL, int $maxLength = NULL) use ($format): TbDatePicker
     {
       $picker = $container[$name] = new TbDatePicker($label, $maxLength);
 

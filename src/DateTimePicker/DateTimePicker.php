@@ -5,7 +5,7 @@
  * @package   RadekDostal\NetteComponents\DateTimePicker
  * @example   https://componette.com/radekdostal/nette-datetimepicker/
  * @author    Ing. Radek Dostál, Ph.D. <radek.dostal@gmail.com>
- * @copyright Copyright © 2010 - 2019 Radek Dostál
+ * @copyright Copyright © 2010 - 2021 Radek Dostál
  * @license   GNU Lesser General Public License
  * @link      https://www.radekdostal.cz
  */
@@ -69,7 +69,7 @@ class DateTimePicker extends AbstractDateTimePicker
 
   public static function register(string $format = NULL): void
   {
-    Container::extensionMethod('addDateTimePicker', function($container, $name, $label = NULL, int $maxLength = NULL) use ($format)
+    Container::extensionMethod('addDateTimePicker', function($container, $name, $label = NULL, int $maxLength = NULL) use ($format): DateTimePicker
     {
       $picker = $container[$name] = new DateTimePicker($label, $maxLength);
 
