@@ -21,7 +21,7 @@
     "nette/utils": "^3.0"
   },
   "require-dev": {
-    "tracy/tracy": "^2.6"
+    "tracy/tracy": "^2.8"
   },
   "autoload": {
     "classmap": ["src/"]
