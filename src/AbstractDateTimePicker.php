@@ -5,16 +5,16 @@
  * @package   RadekDostal\NetteComponents\DateTimePicker
  * @example   https://componette.com/radekdostal/nette-datetimepicker/
  * @author    Ing. Radek Dostál, Ph.D. <radek.dostal@gmail.com>
- * @copyright Copyright © 2016 - 2019 Radek Dostál
+ * @copyright Copyright © 2016 - 2021 Radek Dostál
  * @license   GNU Lesser General Public License
  * @link      https://www.radekdostal.cz
  */
 
 namespace RadekDostal\NetteComponents\DateTimePicker;
 
+use Nette\Forms\Control;
 use Nette\Forms\Controls\TextInput;
 use Nette\Forms\Form;
-use Nette\Forms\IControl;
 use Nette\Forms\Validator;
 
 /**
@@ -103,7 +103,7 @@ abstract class AbstractDateTimePicker extends TextInput
     return parent::addRule($validator, $message, $arg);
   }
 
-  public static function validateMin(IControl $control, string $minimum): bool
+  public static function validateMin(Control $control, string $minimum): bool
   {
     if ($control->getValue() !== '')
       return $control->getValue() >= $control->range['min'];
@@ -111,7 +111,7 @@ abstract class AbstractDateTimePicker extends TextInput
     return TRUE;
   }
 
-  public static function validateMax(IControl $control, string $maximum): bool
+  public static function validateMax(Control $control, string $maximum): bool
   {
     if ($control->getValue() !== '')
       return $control->getValue() <= $control->range['max'];
@@ -119,7 +119,7 @@ abstract class AbstractDateTimePicker extends TextInput
     return TRUE;
   }
 
-  public static function validateRange(IControl $control, array $range): bool
+  public static function validateRange(Control $control, array $range): bool
   {
     if ($control->getValue() !== '')
     {
