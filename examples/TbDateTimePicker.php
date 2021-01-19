@@ -5,7 +5,7 @@
  * @package   RadekDostal\NetteComponents\DateTimePicker
  * @example   https://componette.com/radekdostal/nette-datetimepicker/
  * @author    Ing. Radek Dostál, Ph.D. <radek.dostal@gmail.com>
- * @copyright Copyright © 2014 - 2019 Radek Dostál
+ * @copyright Copyright © 2014 - 2021 Radek Dostál
  * @license   GNU Lesser General Public License
  * @link      https://www.radekdostal.cz
  */
@@ -68,8 +68,7 @@ if ($form->isSuccess() === TRUE)
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment-with-locales.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.39.0/js/tempusdominus-bootstrap-4.min.js"></script>
   <script type="text/javascript">
-    <!-- <![CDATA[
-    $(document).ready(function()
+    $(function()
     {
       $('.datetimepicker').datetimepicker(
       {
@@ -78,7 +77,6 @@ if ($form->isSuccess() === TRUE)
         useCurrent: false
       });
     });
-    //]]> -->
   </script>
 </head>
 <body>

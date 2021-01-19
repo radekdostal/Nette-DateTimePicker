@@ -5,7 +5,7 @@
  * @package   RadekDostal\NetteComponents\DateTimePicker
  * @example   https://componette.com/radekdostal/nette-datetimepicker/
  * @author    Ing. Radek Dostál, Ph.D. <radek.dostal@gmail.com>
- * @copyright Copyright © 2010 - 2019 Radek Dostál
+ * @copyright Copyright © 2010 - 2021 Radek Dostál
  * @license   GNU Lesser General Public License
  * @link      https://www.radekdostal.cz
  */
@@ -59,8 +59,7 @@ if ($form->isSuccess() === TRUE)
   <script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
   <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-ui-timepicker-addon/1.6.3/jquery-ui-timepicker-addon.min.js"></script>
   <script type="text/javascript">
-    <!-- <![CDATA[
-    $(document).ready(function()
+    $(function()
     {
       $('input.datetimepicker').datetimepicker(
       {
@@ -72,7 +71,6 @@ if ($form->isSuccess() === TRUE)
         stepMinute: 5
       });
     });
-    //]]> -->
   </script>
   <style type="text/css">
     <!--

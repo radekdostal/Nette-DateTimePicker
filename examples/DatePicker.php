@@ -5,7 +5,7 @@
  * @package   RadekDostal\NetteComponents\DateTimePicker
  * @example   https://componette.com/radekdostal/nette-datetimepicker/
  * @author    Ing. Radek Dostál, Ph.D. <radek.dostal@gmail.com>
- * @copyright Copyright © 2014 - 2019 Radek Dostál
+ * @copyright Copyright © 2014 - 2021 Radek Dostál
  * @license   GNU Lesser General Public License
  * @link      https://www.radekdostal.cz
  */
@@ -57,8 +57,7 @@ if ($form->isSuccess() === TRUE)
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
   <script type="text/javascript">
-    <!-- <![CDATA[
-    $(document).ready(function()
+    $(function()
     {
       $('input.datepicker').datepicker(
       {
@@ -68,7 +67,6 @@ if ($form->isSuccess() === TRUE)
         yearRange: '2010:2020'
       });
     });
-    //]]> -->
   </script>
   <style type="text/css">
     <!--

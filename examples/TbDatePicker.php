@@ -66,8 +66,7 @@ if ($form->isSuccess() === TRUE)
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment-with-locales.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.39.0/js/tempusdominus-bootstrap-4.min.js"></script>
   <script type="text/javascript">
-    <!-- <![CDATA[
-    $(document).ready(function()
+    $(function()
     {
       $('.datepicker').datetimepicker(
       {
@@ -76,7 +75,6 @@ if ($form->isSuccess() === TRUE)
         useCurrent: false
       });
     });
-    //]]> -->
   </script>
 </head>
 <body>
