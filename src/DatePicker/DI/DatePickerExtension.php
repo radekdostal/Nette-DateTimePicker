@@ -39,7 +39,7 @@ class DatePickerExtension extends CompilerExtension
 
     $config = $this->getConfig();
 
-    $initialize = $class->methods['initialize'];
+    $initialize = $class->getMethod('initialize');
     $initialize->addBody('RadekDostal\NetteComponents\DateTimePicker\DatePicker::register(?);', [$config[self::CONFIG_FORMAT]]);
   }
 }

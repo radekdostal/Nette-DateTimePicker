@@ -39,7 +39,7 @@ class TbDatePickerExtension extends CompilerExtension
 
     $config = $this->getConfig();
 
-    $initialize = $class->methods['initialize'];
+    $initialize = $class->getMethod('initialize');
     $initialize->addBody('RadekDostal\NetteComponents\DateTimePicker\TbDatePicker::register(?);', [$config[self::CONFIG_FORMAT]]);
   }
 }
