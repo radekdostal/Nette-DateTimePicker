@@ -28,7 +28,7 @@ $form->addTbDatePicker('date', 'Date:')
   //->addRule(Form::MIN, NULL, new DateTime('2016-09-01'))
   //->addRule(Form::MAX, NULL, new DateTime('2016-09-15'))
   //->addRule(Form::RANGE, NULL, [new DateTime('2016-09-01'), new DateTime('2016-09-15')])
-  ->setHtmlAttribute('class', 'form-control datepicker')
+  ->setHtmlAttribute('class', 'form-control datetimepicker-input')
   ->setHtmlAttribute('id', 'date')
   ->setHtmlAttribute('data-toggle', 'datetimepicker')
   ->setHtmlAttribute('data-target', '#date')
@@ -60,7 +60,7 @@ if ($form->isSuccess() === TRUE)
   <meta name="author" content="Radek Dostál">
   <title>RadekDostal\NetteComponents\DateTimePicker\TbDatePicker example</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.39.0/css/tempusdominus-bootstrap-4.min.css">
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment-with-locales.min.js"></script>
@@ -68,7 +68,16 @@ if ($form->isSuccess() === TRUE)
   <script type="text/javascript">
     $(function()
     {
-      $('.datepicker').datetimepicker(
+      $.fn.datetimepicker.Constructor.Default = $.extend({}, $.fn.datetimepicker.Constructor.Default,
+      {
+        icons:
+        {
+          previous: 'bi bi-chevron-left',
+          next: 'bi bi-chevron-right'
+        }
+      });
+
+      $('.datetimepicker-input').datetimepicker(
       {
         locale: 'cs',  // en
         format: 'D.M.YYYY',  // M/D/YYYY
@@ -95,7 +104,7 @@ if ($form->isSuccess() === TRUE)
           <?php echo $form['date']->getControl(); ?>
           <div class="input-group-append">
             <span class="input-group-text">
-              <span class="fa fa-calendar"></span>
+              <span class="bi bi-calendar"></span>
             </span>
           </div>
         </div>

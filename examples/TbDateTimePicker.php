@@ -30,7 +30,7 @@ $form->addTbDateTimePicker('date', 'Date and time:')
   //->addRule(Form::MIN, NULL, new DateTime('2016-09-01 13:20'))
   //->addRule(Form::MAX, NULL, new DateTime('2016-09-15 15:30'))
   //->addRule(Form::RANGE, NULL, [new DateTime('2016-09-01 13:20'), new DateTime('2016-09-15 15:30')])
-  ->setHtmlAttribute('class', 'form-control datetimepicker')
+  ->setHtmlAttribute('class', 'form-control datetimepicker-input')
   ->setHtmlAttribute('id', 'datetime')
   ->setHtmlAttribute('data-toggle', 'datetimepicker')
   ->setHtmlAttribute('data-target', '#datetime')
@@ -62,7 +62,7 @@ if ($form->isSuccess() === TRUE)
   <meta name="author" content="Radek Dostál">
   <title>RadekDostal\NetteComponents\DateTimePicker\TbDateTimePicker example</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.39.0/css/tempusdominus-bootstrap-4.min.css">
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment-with-locales.min.js"></script>
@@ -70,11 +70,23 @@ if ($form->isSuccess() === TRUE)
   <script type="text/javascript">
     $(function()
     {
-      $('.datetimepicker').datetimepicker(
+      $.fn.datetimepicker.Constructor.Default = $.extend({}, $.fn.datetimepicker.Constructor.Default,
+      {
+        icons:
+        {
+          up: 'bi bi-chevron-up',
+          down: 'bi bi-chevron-down',
+          previous: 'bi bi-chevron-left',
+          next: 'bi bi-chevron-right'
+        }
+      });
+
+      $('.datetimepicker-input').datetimepicker(
       {
         locale: 'cs',  // en
         format: 'D.M.YYYY HH:mm',  // MM/DD/YYYY HH:mm
-        useCurrent: false
+        useCurrent: false,
+        sideBySide: true
       });
     });
   </script>
@@ -96,7 +108,7 @@ if ($form->isSuccess() === TRUE)
         <?php echo $form['date']->getControl(); ?>
         <div class="input-group-append">
           <span class="input-group-text">
-            <span class="fa fa-calendar"></span>
+            <span class="bi bi-calendar"></span>
           </span>
         </div>
       </div>
