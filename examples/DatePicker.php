@@ -53,9 +53,9 @@ if ($form->isSuccess() === TRUE)
   <meta charset="UTF-8">
   <meta name="author" content="Radek Dostál">
   <title>RadekDostal\NetteComponents\DateTimePicker\DatePicker example</title>
-  <link rel="stylesheet" type="text/css" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+  <link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.13.1/themes/smoothness/jquery-ui.css">
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
-  <script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
   <script type="text/javascript">
     $(function()
     {
