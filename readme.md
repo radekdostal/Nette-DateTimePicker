@@ -3,7 +3,7 @@
 DatePicker and DateTimePicker input controls for Nette Framework
 
 - Author: Radek Dostál &lt;radek.dostal@gmail.com&gt;
-- Copyright: Copyright (c) 2010 - 2022 [Radek Dostál](https://www.radekdostal.cz)
+- Copyright: Copyright (c) 2010 - 2023 [Radek Dostál](https://www.radekdostal.cz)
 - Licence: [GNU Lesser General Public License](https://www.gnu.org/licenses/)
 - Github: [radekdostal/Nette-DateTimePicker](https://github.com/radekdostal/Nette-DateTimePicker)
 
@@ -11,10 +11,10 @@ This add-on creates input box to select date or date and time.
 
 ## Requirements
 
-- **[PHP](https://php.net)** 7.2 or later
-- **[Nette Dependency Injection Container](https://github.com/nette/di)** 3.0 or later
+- **[PHP](https://php.net)** 8.0 or later
+- **[Nette Dependency Injection Container](https://github.com/nette/di)** 3.1 or later
 - **[Nette Forms](https://github.com/nette/forms)** 3.1 or later
-- **[Nette Utilities](https://github.com/nette/utils)** 3.2.1 or later
+- **[Nette Utilities](https://github.com/nette/utils)** 3.2.1 or later or 4.0 or later
 
 ## GNU Lesser General Public License
 
@@ -40,7 +40,6 @@ Form:
 ```php
 $form->addTbDatePicker('date', 'Date')
   ->setNullable()
-  ->setRequired(FALSE)
   ->addRule(self::RANGE, NULL, [new \DateTime('2016-09-01'), new \DateTime('2016-09-15')]);
 ```
 
