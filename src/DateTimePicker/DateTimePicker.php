@@ -30,7 +30,7 @@ class DateTimePicker extends AbstractDateTimePicker
   private $readonly = TRUE;
 
   /** @return mixed */
-  public function getValue()
+  public function getValue(): mixed
   {
     if (strlen($this->value) > 0)
     {
