@@ -23,11 +23,8 @@ use Nette\Utils\Html;
  */
 class DateTimePicker extends AbstractDateTimePicker
 {
-  /** @var string */
-  protected $format = 'd.m.Y H:i';
-
-  /** @var bool */
-  private $readonly = TRUE;
+  protected string $format = 'd.m.Y H:i';
+  private bool $readonly = TRUE;
 
   public function getValue(): mixed
   {
@@ -48,8 +45,7 @@ class DateTimePicker extends AbstractDateTimePicker
     return parent::getValue();
   }
 
-  /** @return static */
-  public function setReadOnly(bool $state)
+  public function setReadOnly(bool $state): static
   {
     $this->readonly = $state;
 

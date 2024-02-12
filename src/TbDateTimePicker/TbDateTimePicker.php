@@ -22,8 +22,7 @@ use Nette\Utils\DateTime;
  */
 class TbDateTimePicker extends AbstractDateTimePicker
 {
-  /** @var string */
-  protected $format = 'd.m.Y H:i';
+  protected string $format = 'd.m.Y H:i';
 
   public function getValue(): mixed
   {

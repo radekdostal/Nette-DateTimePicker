@@ -5,7 +5,7 @@
  * @package   RadekDostal\NetteComponents\DateTimePicker
  * @example   https://componette.com/radekdostal/nette-datetimepicker/
  * @author    Ing. Radek Dostál, Ph.D. <radek.dostal@gmail.com>
- * @copyright Copyright © 2016 - 2021 Radek Dostál
+ * @copyright Copyright © 2016 - 2024 Radek Dostál
  * @license   GNU Lesser General Public License
  * @link      https://www.radekdostal.cz
  */
@@ -24,25 +24,21 @@ use Nette\Forms\Validator;
  */
 abstract class AbstractDateTimePicker extends TextInput
 {
-  /** @var string */
-  protected $format = '';
+  protected string $format = '';
 
-  /** @var array */
-  protected $range = [
+  protected array $range = [
     'min' => NULL,
     'max' => NULL
   ];
 
-  /** @var string */
-  protected $errorMessage = NULL;
+  protected ?string $errorMessage = NULL;
 
   public function __construct($label = NULL, int $maxLength = NULL)
   {
     parent::__construct($label, $maxLength);
   }
 
-  /** @return static */
-  public function setFormat(string $format)
+  public function setFormat(string $format): static
   {
     $this->format = $format;
 
@@ -67,8 +63,7 @@ abstract class AbstractDateTimePicker extends TextInput
     parent::setValue($value);
   }
 
-  /** @return static */
-  public function addRule($validator, $message = NULL, $arg = NULL)
+  public function addRule($validator, $errorMessage = NULL, $arg = NULL): static
   {
     $class = get_called_class();
 
@@ -100,7 +95,7 @@ abstract class AbstractDateTimePicker extends TextInput
         break;
     }
 
-    return parent::addRule($validator, $message, $arg);
+    return parent::addRule($validator, $errorMessage, $arg);
   }
 
   public static function validateMin(Control $control, string $minimum): bool
