@@ -5,7 +5,7 @@
  * @package   RadekDostal\NetteComponents\DateTimePicker
  * @example   https://componette.com/radekdostal/nette-datetimepicker/
  * @author    Ing. Radek Dostál, Ph.D. <radek.dostal@gmail.com>
- * @copyright Copyright © 2014 - 2021 Radek Dostál
+ * @copyright Copyright © 2014 - 2024 Radek Dostál
  * @license   GNU Lesser General Public License
  * @link      https://www.radekdostal.cz
  */
@@ -29,8 +29,7 @@ class DatePicker extends AbstractDateTimePicker
   /** @var bool */
   private $readonly = TRUE;
 
-  /** @return mixed */
-  public function getValue()
+  public function getValue(): mixed
   {
     if (strlen($this->value) > 0)
     {

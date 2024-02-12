@@ -5,7 +5,7 @@
  * @package   RadekDostal\NetteComponents\DateTimePicker
  * @example   https://componette.com/radekdostal/nette-datetimepicker/
  * @author    Ing. Radek Dostál, Ph.D. <radek.dostal@gmail.com>
- * @copyright Copyright © 2014  - 2019 Radek Dostál
+ * @copyright Copyright © 2014  - 2024 Radek Dostál
  * @license   GNU Lesser General Public License
  * @link      https://www.radekdostal.cz
  */
@@ -25,8 +25,7 @@ class TbDateTimePicker extends AbstractDateTimePicker
   /** @var string */
   protected $format = 'd.m.Y H:i';
 
-  /** @return mixed */
-  public function getValue()
+  public function getValue(): mixed
   {
     if (strlen($this->value) > 0)
     {
