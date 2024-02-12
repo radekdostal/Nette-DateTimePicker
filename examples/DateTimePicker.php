@@ -5,7 +5,7 @@
  * @package   RadekDostal\NetteComponents\DateTimePicker
  * @example   https://componette.com/radekdostal/nette-datetimepicker/
  * @author    Ing. Radek Dostál, Ph.D. <radek.dostal@gmail.com>
- * @copyright Copyright © 2010 - 2023 Radek Dostál
+ * @copyright Copyright © 2010 - 2024 Radek Dostál
  * @license   GNU Lesser General Public License
  * @link      https://www.radekdostal.cz
  */
@@ -26,9 +26,9 @@ $form->addDateTimePicker('datetime', 'Date and time:', 16)
   //->setFormat('m/d/Y H:i') // for datetimepicker option dateFormat: 'mm/dd/yy'
   //->setReadOnly(FALSE)
   ->setRequired()
-  //->addRule(Form::MIN, NULL, new DateTime('2016-09-01 13:20'))
-  //->addRule(Form::MAX, NULL, new DateTime('2016-09-15 15:30'))
-  //->addRule(Form::RANGE, NULL, [new DateTime('2016-09-01 13:20'), new DateTime('2016-09-15 15:30')])
+  //->addRule(Form::Min, NULL, new DateTime('2016-09-01 13:20'))
+  //->addRule(Form::Max, NULL, new DateTime('2016-09-15 15:30'))
+  //->addRule(Form::Range, NULL, [new DateTime('2016-09-01 13:20'), new DateTime('2016-09-15 15:30')])
   ->setHtmlAttribute('size', 16);
 
 $form->addSubmit('submit', 'Send');
@@ -53,12 +53,12 @@ if ($form->isSuccess() === TRUE)
   <meta charset="UTF-8">
   <meta name="author" content="Radek Dostál">
   <title>RadekDostal\NetteComponents\DateTimePicker\DateTimePicker example</title>
-  <link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.13.1/themes/smoothness/jquery-ui.css">
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-ui-timepicker-addon/1.6.3/jquery-ui-timepicker-addon.min.css">
-  <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
-  <script type="text/javascript" src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ui-timepicker-addon/1.6.3/jquery-ui-timepicker-addon.min.js"></script>
-  <script type="text/javascript">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/smoothness/jquery-ui.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-ui-timepicker-addon/1.6.3/jquery-ui-timepicker-addon.min.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ui-timepicker-addon/1.6.3/jquery-ui-timepicker-addon.min.js"></script>
+  <script>
     $(function()
     {
       $('input.datetimepicker').datetimepicker(
@@ -72,7 +72,7 @@ if ($form->isSuccess() === TRUE)
       });
     });
   </script>
-  <style type="text/css">
+  <style>
     <!--
     body
     {

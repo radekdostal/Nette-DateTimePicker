@@ -5,7 +5,7 @@
  * @package   RadekDostal\NetteComponents\DateTimePicker
  * @example   https://componette.com/radekdostal/nette-datetimepicker/
  * @author    Ing. Radek Dostál, Ph.D. <radek.dostal@gmail.com>
- * @copyright Copyright © 2014 - 2023 Radek Dostál
+ * @copyright Copyright © 2014 - 2024 Radek Dostál
  * @license   GNU Lesser General Public License
  * @link      https://www.radekdostal.cz
  */
@@ -26,9 +26,9 @@ $form->addDatePicker('date', 'Date:', 10)
   //->setFormat('m/d/Y') // for datepicker option dateFormat: 'mm/dd/yy'
   //->setReadOnly(FALSE)
   ->setRequired()
-  //->addRule(Form::MIN, NULL, new DateTime('2016-09-01'))
-  //->addRule(Form::MAX, NULL, new DateTime('2016-09-15'))
-  //->addRule(Form::RANGE, NULL, [new DateTime('2016-09-01'), new DateTime('2016-09-15')])
+  //->addRule(Form::Min, NULL, new DateTime('2016-09-01'))
+  //->addRule(Form::Max, NULL, new DateTime('2016-09-15'))
+  //->addRule(Form::Range, NULL, [new DateTime('2016-09-01'), new DateTime('2016-09-15')])
   ->setHtmlAttribute('size', 10);
 
 $form->addSubmit('submit', 'Send');
@@ -53,10 +53,10 @@ if ($form->isSuccess() === TRUE)
   <meta charset="UTF-8">
   <meta name="author" content="Radek Dostál">
   <title>RadekDostal\NetteComponents\DateTimePicker\DatePicker example</title>
-  <link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.13.1/themes/smoothness/jquery-ui.css">
-  <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
-  <script type="text/javascript" src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
-  <script type="text/javascript">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/smoothness/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+  <script>
     $(function()
     {
       $('input.datepicker').datepicker(
@@ -68,7 +68,7 @@ if ($form->isSuccess() === TRUE)
       });
     });
   </script>
-  <style type="text/css">
+  <style>
     <!--
     body
     {

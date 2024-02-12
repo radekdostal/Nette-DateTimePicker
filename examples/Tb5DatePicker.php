@@ -5,7 +5,7 @@
  * @package   RadekDostal\NetteComponents\DateTimePicker
  * @example   https://componette.com/radekdostal/nette-datetimepicker/
  * @author    Ing. Radek Dostál, Ph.D. <radek.dostal@gmail.com>
- * @copyright Copyright © 2023 Radek Dostál
+ * @copyright Copyright © 2023 - 2024 Radek Dostál
  * @license   GNU Lesser General Public License
  * @link      https://www.radekdostal.cz
  */
@@ -25,9 +25,9 @@ $form = new Form();
 $form->addTbDatePicker('date', 'Date:')
   //->setFormat('m/d/Y') // for en locale
   ->setRequired()
-  //->addRule(Form::MIN, NULL, new DateTime('2016-09-01'))
-  //->addRule(Form::MAX, NULL, new DateTime('2016-09-15'))
-  //->addRule(Form::RANGE, NULL, [new DateTime('2016-09-01'), new DateTime('2016-09-15')])
+  //->addRule(Form::Min, NULL, new DateTime('2016-09-01'))
+  //->addRule(Form::Max, NULL, new DateTime('2016-09-15'))
+  //->addRule(Form::Range, NULL, [new DateTime('2016-09-01'), new DateTime('2016-09-15')])
   ->setHtmlAttribute('class', 'form-control datepicker-input')
   ->getLabelPrototype()
   ->setAttribute('class', 'form-label');
@@ -56,12 +56,12 @@ if ($form->isSuccess() === TRUE)
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="Radek Dostál">
   <title>RadekDostal\NetteComponents\DateTimePicker\Tb5DatePicker example</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.3.1/dist/css/datepicker.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.3.1/dist/css/datepicker-bs5.min.css">
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.3.1/dist/js/datepicker.min.js"></script>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.3.1/dist/js/locales/cs.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.3.4/dist/css/datepicker.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.3.4/dist/css/datepicker-bs5.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.3.4/dist/js/datepicker.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.3.4/dist/js/locales/cs.js"></script>
 </head>
 <body class="d-flex flex-column h-100">
   <main class="flex-shrink-0">
@@ -94,8 +94,8 @@ if ($form->isSuccess() === TRUE)
       <?php $form->render('end'); ?>
     </div>
   </main>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-  <script type="text/javascript">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  <script>
     const datepicker = new Datepicker(document.querySelector('input.datepicker-input'),
     {
       language: 'cs',

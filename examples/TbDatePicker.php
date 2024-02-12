@@ -5,7 +5,7 @@
  * @package   RadekDostal\NetteComponents\DateTimePicker
  * @example   https://componette.com/radekdostal/nette-datetimepicker/
  * @author    Ing. Radek Dostál, Ph.D. <radek.dostal@gmail.com>
- * @copyright Copyright © 2014 - 2023 Radek Dostál
+ * @copyright Copyright © 2014 - 2024 Radek Dostál
  * @license   GNU Lesser General Public License
  * @link      https://www.radekdostal.cz
  */
@@ -25,9 +25,9 @@ $form = new Form();
 $form->addTbDatePicker('date', 'Date:')
   //->setFormat('m/d/Y') // for en locale
   ->setRequired()
-  //->addRule(Form::MIN, NULL, new DateTime('2016-09-01'))
-  //->addRule(Form::MAX, NULL, new DateTime('2016-09-15'))
-  //->addRule(Form::RANGE, NULL, [new DateTime('2016-09-01'), new DateTime('2016-09-15')])
+  //->addRule(Form::Min, NULL, new DateTime('2016-09-01'))
+  //->addRule(Form::Max, NULL, new DateTime('2016-09-15'))
+  //->addRule(Form::Range, NULL, [new DateTime('2016-09-01'), new DateTime('2016-09-15')])
   ->setHtmlAttribute('class', 'form-control datetimepicker-input')
   ->setHtmlAttribute('id', 'date')
   ->setHtmlAttribute('data-toggle', 'datetimepicker')
@@ -60,12 +60,12 @@ if ($form->isSuccess() === TRUE)
   <meta name="author" content="Radek Dostál">
   <title>RadekDostal\NetteComponents\DateTimePicker\TbDatePicker example</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.39.0/css/tempusdominus-bootstrap-4.min.css">
-  <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment-with-locales.min.js"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.39.0/js/tempusdominus-bootstrap-4.min.js"></script>
-  <script type="text/javascript">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment-with-locales.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.39.0/js/tempusdominus-bootstrap-4.min.js"></script>
+  <script>
     $(function()
     {
       $.fn.datetimepicker.Constructor.Default = $.extend({}, $.fn.datetimepicker.Constructor.Default,
