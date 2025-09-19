@@ -43,9 +43,9 @@ class TbDatePicker extends AbstractDateTimePicker
     return parent::getValue();
   }
 
-  public static function register(string $format = NULL): void
+  public static function register(?string $format = NULL): void
   {
-    Container::extensionMethod('addTbDatePicker', function($container, $name, $label = NULL, int $maxLength = NULL) use ($format): TbDatePicker
+    Container::extensionMethod('addTbDatePicker', function($container, $name, $label = NULL, ?int $maxLength = NULL) use ($format): TbDatePicker
     {
       $picker = $container[$name] = new TbDatePicker($label, $maxLength);
 
