@@ -33,7 +33,7 @@ abstract class AbstractDateTimePicker extends TextInput
 
   protected ?string $errorMessage = NULL;
 
-  public function __construct($label = NULL, int $maxLength = NULL)
+  public function __construct($label = NULL, ?int $maxLength = NULL)
   {
     parent::__construct($label, $maxLength);
   }
