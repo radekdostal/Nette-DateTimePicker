@@ -62,9 +62,9 @@ class DateTimePicker extends AbstractDateTimePicker
     return $control;
   }
 
-  public static function register(string $format = NULL): void
+  public static function register(?string $format = NULL): void
   {
-    Container::extensionMethod('addDateTimePicker', function($container, $name, $label = NULL, int $maxLength = NULL) use ($format): DateTimePicker
+    Container::extensionMethod('addDateTimePicker', function($container, $name, $label = NULL, ?int $maxLength = NULL) use ($format): DateTimePicker
     {
       $picker = $container[$name] = new DateTimePicker($label, $maxLength);
 
